@@ -36,7 +36,7 @@ public class CreatEnemy : MonoBehaviour {
 
 	GameObject RandomEnemy (Vector2 posicao)
 	{
-	
+		
 		GameObject newEnemy;
 
 		if (Random.value > 0.5f || enemyList.Count <= 1 ) 
