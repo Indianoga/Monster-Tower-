@@ -7,6 +7,9 @@ public class CreatEnemy : MonoBehaviour {
 
 	[SerializeField]
 	GameObject [] enemyPrefab;
+	[SerializeField]
+	int enemyLife;
+	int startPosition;
 
 	List <GameObject> enemyList;
 
@@ -14,6 +17,7 @@ public class CreatEnemy : MonoBehaviour {
 	void Start () 
 	{
 		enemyList = new List <GameObject>();
+		enemyLife = 3;
 		InstatiateEnemy();
 	}
 	
@@ -22,16 +26,35 @@ public class CreatEnemy : MonoBehaviour {
 	{
 		if (Input.GetButtonDown("Fire1"))
 		{
-			Punch();
-			enemyList.RemoveAt(0);
-			repositionEnemy();
+			if (Input.mousePosition.x > Screen.width/2)
+			{
+				SendMessage("Right");
+				enemyLife--;
+			}
+			
+			else
+			{
+				SendMessage("Left");
+				enemyLife--;
+			}
+			
+			if (enemyLife <= 0)
+			{
+				RemoveEnemy();
+				enemyList.RemoveAt(0);
+				repositionEnemy();
+				enemyLife = 3;
+			}
+			
 		}
 			
 	}
 
-	void Punch()
+	void RemoveEnemy()
 	{
+		
 		enemyList[0].SendMessage("Delete");
+	
 	}
 
 	GameObject RandomEnemy (Vector2 posicao)
@@ -68,7 +91,7 @@ public class CreatEnemy : MonoBehaviour {
 		for (int i = 0; i <= 8; i++ )
 		{
 
-			GameObject enemyPrebs = RandomEnemy (new Vector2 (0,-3.53f + (i * 0.99f)));
+			GameObject enemyPrebs = RandomEnemy (new Vector2 (0.05f,-3.53f + (i * 0.99f)));
 			enemyList.Add (enemyPrebs);
 			
 		}
@@ -77,7 +100,7 @@ public class CreatEnemy : MonoBehaviour {
 	void repositionEnemy()
 	{
 
-		GameObject enemyPrebs = RandomEnemy (new Vector2 (0,-3.53f + (8 * 0.99f)));
+		GameObject enemyPrebs = RandomEnemy (new Vector2 (0.05f,-3.53f + (8 * 0.99f)));
 		enemyList.Add (enemyPrebs);
 
 		for (int i = 0; i <= 7; i++) 
@@ -85,7 +108,11 @@ public class CreatEnemy : MonoBehaviour {
 			enemyList [i].transform.position = new Vector2 (enemyList[i].transform.position.x, enemyList[i].transform.position.y - 0.99f);
 		}
 	}
-
+	
+	void TakeDamage()
+	{
+		
+	}
 	void Delete()
 	{
 		Destroy(gameObject);
