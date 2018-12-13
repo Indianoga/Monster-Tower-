@@ -268,6 +268,7 @@ MonoBehaviour:
   - {fileID: 1372971796385552, guid: 25dd08318471b3547962a39e5317484f, type: 2}
   - {fileID: 1372971796385552, guid: 953e28fa4b7d6114ab18e34037d06df0, type: 2}
   - {fileID: 1772138149000752, guid: c26d5f2dbd011834b8218ae12c121819, type: 2}
+  enemyLife: 0
 --- !u!4 &1851665433
 Transform:
   m_ObjectHideFlags: 0
