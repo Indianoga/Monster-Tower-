@@ -5,10 +5,13 @@ using UnityEngine.UI;
 
 public class CreatEnemy : MonoBehaviour {
 
+	
+
+	bool playerSide;
 	[SerializeField]
-	GameObject [] enemyPrefab;
-	[SerializeField]
-	int enemyLife;
+	EnemyLifePrefabControl [] enemyLifePrefabControl;
+	
+	GameObject enemyPrebs;
 	int startPosition;
 
 	List <GameObject> enemyList;
@@ -17,39 +20,37 @@ public class CreatEnemy : MonoBehaviour {
 	void Start () 
 	{
 		enemyList = new List <GameObject>();
-		enemyLife = 3;
 		InstatiateEnemy();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		
 		if (Input.GetButtonDown("Fire1"))
 		{
 			if (Input.mousePosition.x > Screen.width/2)
 			{
 				SendMessage("Right");
-				enemyLife--;
+				playerSide = true;
 			}
 			
 			else
 			{
 				SendMessage("Left");
-				enemyLife--;
+				playerSide = false;
+				
 			}
-			
-			if (enemyLife <= 0)
-			{
+		
 				RemoveEnemy();
 				enemyList.RemoveAt(0);
 				repositionEnemy();
-				enemyLife = 3;
-			}
+				DoDamage();
 			
 		}
 			
 	}
-
+	
 	void RemoveEnemy()
 	{
 		
@@ -65,18 +66,18 @@ public class CreatEnemy : MonoBehaviour {
 		if (Random.value > 0.5f || enemyList.Count <= 1 ) 
 		{
 
-			newEnemy = Instantiate (enemyPrefab[0]);
+			newEnemy = Instantiate (enemyLifePrefabControl[0].enemyPrefab);
 
 		}
 		else 
 			{
 				if(Random.value > 0.5f)
 				{
-					newEnemy = Instantiate (enemyPrefab[1]);
+					newEnemy = Instantiate (enemyLifePrefabControl[1].enemyPrefab);
 				}
 				else 
 				{
-					newEnemy = Instantiate (enemyPrefab[2]);
+					newEnemy = Instantiate (enemyLifePrefabControl[2].enemyPrefab);
 				}
 			}
 
@@ -84,7 +85,9 @@ public class CreatEnemy : MonoBehaviour {
 
 		return newEnemy;
 
-		}
+	}
+
+	
 
 	void InstatiateEnemy()
 	{
@@ -109,12 +112,24 @@ public class CreatEnemy : MonoBehaviour {
 		}
 	}
 	
-	void TakeDamage()
+	void DoDamage()
 	{
-		
+		if (enemyList[0].gameObject.CompareTag ("enemy") )
+		{
+			if ((enemyList[0].name == "MonsterEsq(Clone)" && !playerSide) || (enemyList[0].name == "MonsterDir(Clone)" && playerSide))
+			{
+				
+				GameOver();
+			}
+		}
 	}
 	void Delete()
 	{
 		Destroy(gameObject);
+	}
+
+	void GameOver()
+	{
+		Application.LoadLevel("Game");
 	}
 }

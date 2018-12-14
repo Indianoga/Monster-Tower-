@@ -9,6 +9,7 @@ public class Player : MonoBehaviour {
 	GameObject playerPrefab;
 
 	float playerScale;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -21,13 +22,15 @@ public class Player : MonoBehaviour {
 		
 	}
 
-	void Right()
+	public void Right()
 	{
+		
 		playerPrefab.transform.position = new Vector3(0.99f, playerPrefab.transform.position.y, 0);
 		playerPrefab.transform.localScale = new Vector3 (-playerScale, 1,1);
 	}
-	void Left()
+	public void Left()
 	{
+		
 		playerPrefab.transform.position = new Vector3(-1.01f, playerPrefab.transform.position.y, 0);
 		playerPrefab.transform.localScale = new Vector3 (playerScale, 1,1);
 	}
