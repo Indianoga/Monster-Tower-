@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CreatEnemy : MonoBehaviour {
 
@@ -130,6 +131,9 @@ public class CreatEnemy : MonoBehaviour {
 
 	void GameOver()
 	{
-		Application.LoadLevel("Game");
+		
+		SceneManager.LoadScene("Game");
+		
+		
 	}
 }
