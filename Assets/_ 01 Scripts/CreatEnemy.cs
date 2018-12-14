@@ -33,31 +33,26 @@ public class CreatEnemy : MonoBehaviour {
 			if (Input.mousePosition.x > Screen.width/2)
 			{
 				SendMessage("Right");
+				enemyList[0].SendMessage("RightPunch");
 				playerSide = true;
 			}
 			
 			else
 			{
 				SendMessage("Left");
+				enemyList[0].SendMessage("LeftPunch");
 				playerSide = false;
 				
 			}
 		
-				RemoveEnemy();
-				enemyList.RemoveAt(0);
-				repositionEnemy();
-				DoDamage();
+			enemyList.RemoveAt(0);
+			repositionEnemy();
+			DoDamage();
 			
 		}
 			
 	}
 	
-	void RemoveEnemy()
-	{
-		
-		enemyList[0].SendMessage("Delete");
-	
-	}
 
 	GameObject RandomEnemy (Vector2 posicao)
 	{
