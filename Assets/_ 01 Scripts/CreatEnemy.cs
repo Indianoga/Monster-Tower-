@@ -17,17 +17,23 @@ public class CreatEnemy : MonoBehaviour {
 
 	List <GameObject> enemyList;
 
+	public int enemyCont;
+
 	// Use this for initialization
 	void Start () 
 	{
 		enemyList = new List <GameObject>();
 		InstatiateEnemy();
+		
+		
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
 		
+		
+
 		if (Input.GetButtonDown("Fire1"))
 		{
 			if (Input.mousePosition.x > Screen.width/2)
@@ -46,6 +52,7 @@ public class CreatEnemy : MonoBehaviour {
 			}
 		
 			enemyList.RemoveAt(0);
+			enemyCont++;
 			repositionEnemy();
 			DoDamage();
 			
@@ -87,14 +94,18 @@ public class CreatEnemy : MonoBehaviour {
 
 	void InstatiateEnemy()
 	{
+		
 		for (int i = 0; i <= 8; i++ )
 		{
 
 			GameObject enemyPrebs = RandomEnemy (new Vector2 (0.05f,-3.53f + (i * 0.99f)));
 			enemyList.Add (enemyPrebs);
-			
+			 
 		}
+		
+		
 	}
+
 
 	void repositionEnemy()
 	{
