@@ -277,6 +277,7 @@ MonoBehaviour:
     enemyLife: 1
     enemyPrefab: {fileID: 1372971796385552, guid: 953e28fa4b7d6114ab18e34037d06df0,
       type: 2}
+  enemyCont: 0
 --- !u!4 &1851665433
 Transform:
   m_ObjectHideFlags: 0
