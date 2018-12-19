@@ -104,7 +104,7 @@ public class CreatEnemy : MonoBehaviour {
 		for (int i = 0; i <= 8; i++ )
 		{
 
-			GameObject enemyPrefabsInstantiats = RandomEnemy (new Vector2 (0.05f,-3.53f + (i * 0.99f)));
+			GameObject enemyPrefabsInstantiats = RandomEnemy (new Vector2 (0.05f,-3.06f + (i * 0.99f)));
 			enemyList.Add (enemyPrefabsInstantiats);
 			 
 		}
@@ -116,7 +116,7 @@ public class CreatEnemy : MonoBehaviour {
 	void repositionEnemy()
 	{
 
-		GameObject enemyPrefabsInstantiats = RandomEnemy (new Vector2 (0.05f,-3.53f + (8 * 0.99f)));
+		GameObject enemyPrefabsInstantiats = RandomEnemy (new Vector2 (0.05f,-3.06f + (8 * 0.99f)));
 		enemyList.Add (enemyPrefabsInstantiats);
 
 		for (int i = 0; i <= 7; i++) 
