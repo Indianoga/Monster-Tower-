@@ -24,7 +24,7 @@ public class CreatEnemy : MonoBehaviour {
 	void Start () 
 	{
 		enemyList = new List <GameObject>();
-		InstatiateEnemy();
+		InstantiateEnemy();
 		
 		
 	}
@@ -63,46 +63,33 @@ public class CreatEnemy : MonoBehaviour {
 	
 	GameObject RandomEnemy (Vector2 posicao)
 	{
+		int index = Random.Range(0,enemyLifePrefabControl.Length);
+		GameObject newEnemy = enemyLifePrefabControl[index].enemyPrefab;
 		
-		GameObject newEnemy;
-		if (Random.value > 0.5f || enemyList.Count <= 1 ) 
+		if (enemyList.Count <= 1)
 		{
-
-			newEnemy = Instantiate (enemyLifePrefabControl[0].enemyPrefab);
-
+			newEnemy = Instantiate(enemyLifePrefabControl[0].enemyPrefab);
 		}
-		else 
+		else
 		{
-			{
-				if(Random.value > 0.5f)
-				{
-					newEnemy = Instantiate (enemyLifePrefabControl[1].enemyPrefab);
-				}
-				else  
-				{
-					newEnemy = Instantiate (enemyLifePrefabControl[2].enemyPrefab);
-				}
-				
-			}
+			newEnemy = Instantiate (enemyLifePrefabControl[index].enemyPrefab);
 		}
 		
-
 		newEnemy.transform.position = posicao;
-
 		return newEnemy;
 
 	}
 
 	
 
-	void InstatiateEnemy()
+	void InstantiateEnemy()
 	{
 		
 		for (int i = 0; i <= 8; i++ )
 		{
 
-			GameObject enemyPrebs = RandomEnemy (new Vector2 (0.05f,-3.53f + (i * 0.99f)));
-			enemyList.Add (enemyPrebs);
+			GameObject enemyPrefabsInstantiats = RandomEnemy (new Vector2 (0.05f,-3.53f + (i * 0.99f)));
+			enemyList.Add (enemyPrefabsInstantiats);
 			 
 		}
 		
@@ -113,8 +100,8 @@ public class CreatEnemy : MonoBehaviour {
 	void repositionEnemy()
 	{
 
-		GameObject enemyPrebs = RandomEnemy (new Vector2 (0.05f,-3.53f + (8 * 0.99f)));
-		enemyList.Add (enemyPrebs);
+		GameObject enemyPrefabsInstantiats = RandomEnemy (new Vector2 (0.05f,-3.53f + (8 * 0.99f)));
+		enemyList.Add (enemyPrefabsInstantiats);
 
 		for (int i = 0; i <= 7; i++) 
 		{
