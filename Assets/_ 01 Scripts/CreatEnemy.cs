@@ -12,8 +12,8 @@ public class CreatEnemy : MonoBehaviour {
 	[SerializeField]
 	EnemyLifePrefabControl [] enemyLifePrefabControl;
 	
-	GameObject enemyPrebs;
 	GameObject newEnemy;
+	int enemyLife;
 	int startPosition;
 
 	List <GameObject> enemyList;
@@ -25,6 +25,7 @@ public class CreatEnemy : MonoBehaviour {
 	{
 		enemyList = new List <GameObject>();
 		InstantiateEnemy();
+		
 		
 		
 	}
@@ -39,23 +40,38 @@ public class CreatEnemy : MonoBehaviour {
 			if (Input.mousePosition.x > Screen.width/2)
 			{
 				SendMessage("Right");
-
-				enemyList[0].SendMessage("RightPunch");
+				enemyLife--;
+				if (enemyLife <= 0)
+				{
+					enemyList[0].SendMessage("RightPunch");
+					enemyList.RemoveAt(0);
+					repositionEnemy();
+				}
+				
 				playerSide = true;
 			}
 			
 			else
 			{
+				enemyLife--;
 				SendMessage("Left");
-				enemyList[0].SendMessage("LeftPunch");
+				if (enemyLife <= 0)
+				{
+					enemyList[0].SendMessage("LeftPunch");
+					enemyList.RemoveAt(0);
+					repositionEnemy();
+				}
+				
+				
 				playerSide = false;
 				
 			}
 		
-			enemyList.RemoveAt(0);
+			
 			enemyCont++;
-			repositionEnemy();
+			//TakeDamage();
 			DoDamage();
+			
 			
 		}
 			
@@ -120,9 +136,16 @@ public class CreatEnemy : MonoBehaviour {
 			}
 		}
 	}
-	void Delete()
+	void TakeDamage()
 	{
-		Destroy(gameObject);
+		if (enemyList[0].CompareTag("enemy"))
+		{
+			if((enemyList[0].name == "MonsterShieldEsq(Clone)") || (enemyList[0].name == "MonsterShieldDir(Clone)" ))
+			{
+				enemyLife = enemyLifePrefabControl[3].enemyLife;
+			}
+			Debug.Log(enemyLife);
+		}
 	}
 
 	void GameOver()
