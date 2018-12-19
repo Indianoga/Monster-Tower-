@@ -13,6 +13,7 @@ public class CreatEnemy : MonoBehaviour {
 	EnemyLifePrefabControl [] enemyLifePrefabControl;
 	
 	GameObject enemyPrebs;
+	GameObject newEnemy;
 	int startPosition;
 
 	List <GameObject> enemyList;
@@ -32,13 +33,13 @@ public class CreatEnemy : MonoBehaviour {
 	void Update () 
 	{
 		
-		
 
 		if (Input.GetButtonDown("Fire1"))
 		{
 			if (Input.mousePosition.x > Screen.width/2)
 			{
 				SendMessage("Right");
+
 				enemyList[0].SendMessage("RightPunch");
 				playerSide = true;
 			}
@@ -60,12 +61,10 @@ public class CreatEnemy : MonoBehaviour {
 			
 	}
 	
-
 	GameObject RandomEnemy (Vector2 posicao)
 	{
 		
 		GameObject newEnemy;
-
 		if (Random.value > 0.5f || enemyList.Count <= 1 ) 
 		{
 
@@ -73,16 +72,20 @@ public class CreatEnemy : MonoBehaviour {
 
 		}
 		else 
+		{
 			{
 				if(Random.value > 0.5f)
 				{
 					newEnemy = Instantiate (enemyLifePrefabControl[1].enemyPrefab);
 				}
-				else 
+				else  
 				{
 					newEnemy = Instantiate (enemyLifePrefabControl[2].enemyPrefab);
 				}
+				
 			}
+		}
+		
 
 		newEnemy.transform.position = posicao;
 
