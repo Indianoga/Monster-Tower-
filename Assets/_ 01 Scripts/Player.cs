@@ -7,7 +7,8 @@ public class Player : MonoBehaviour {
 
 	[SerializeField]
 	GameObject playerPrefab;
-
+	[SerializeField]
+	public int playerLife;
 	float playerScale;
 
 	// Use this for initialization

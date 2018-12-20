@@ -10,6 +10,9 @@ public class CreatEnemy : MonoBehaviour {
 
 	bool playerSide;
 	[SerializeField]
+	GameObject gameManager;
+	Player playerScripting;
+	[SerializeField]
 	EnemyLifePrefabControl [] enemyLifePrefabControl;
 	
 	GameObject newEnemy;
@@ -24,6 +27,7 @@ public class CreatEnemy : MonoBehaviour {
 	void Start () 
 	{
 		enemyList = new List <GameObject>();
+		playerScripting = gameManager.GetComponent<Player>();
 		InstantiateEnemy();
 		
 		
@@ -131,8 +135,11 @@ public class CreatEnemy : MonoBehaviour {
 		{
 			if ((enemyList[0].name == "MonsterEsq(Clone)" && !playerSide) || (enemyList[0].name == "MonsterDir(Clone)" && playerSide))
 			{
-				
-				GameOver();
+				playerScripting.playerLife--;
+				if (playerScripting.playerLife <= 0)
+				{
+					GameOver();
+				}
 			}
 		}
 	}

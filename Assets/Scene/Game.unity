@@ -728,6 +728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba37f45781b2ce1438c397b73aaff488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 1851665431}
   enemyLifePrefabControl:
   - IdPrefab: bone
     enemyLife: 1
@@ -775,6 +776,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 2047051809}
+  playerLife: 3
 --- !u!1 &2047051809 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1786533414392496, guid: 3bb570a14bd5e5e40b256d4c281eab15,
