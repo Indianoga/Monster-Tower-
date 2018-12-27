@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class CreatEnemy : MonoBehaviour {
 
 	
-
+	
 	bool playerSide;
 	public bool isGame = false;
 

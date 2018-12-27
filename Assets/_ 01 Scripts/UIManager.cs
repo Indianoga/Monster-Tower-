@@ -7,11 +7,23 @@ public class UIManager : MonoBehaviour
 {
 	[SerializeField]
 	GameObject playBtn;
+	[SerializeField]
+	GameObject pauseBtn;
+	[SerializeField]
+	GameObject ContBtn;
+	
+
+
+	[SerializeField]
+	GameObject gameManager;
+	CreatEnemy creatEnemy;
 
 	// Use this for initialization
 	void Start () 
 	{
-		
+		pauseBtn.SetActive(false);
+		ContBtn.SetActive(false);
+		creatEnemy = gameManager.GetComponent<CreatEnemy>();
 	}
 	
 	// Update is called once per frame
@@ -20,9 +32,32 @@ public class UIManager : MonoBehaviour
 
 	}
 
-	public void startGame()
+	public void StartGame()
 	{
 		playBtn.SetActive(false);
+		pauseBtn.SetActive(true);
+		creatEnemy.isGame = true;
 		
+	}
+
+	public void PauseMenu(bool isPause)
+	{
+
+		if (!isPause)
+		{
+			Time.timeScale = 0;
+			creatEnemy.isGame = false;
+			pauseBtn.SetActive(false);
+			ContBtn.SetActive(true);
+		}
+		else
+		{
+			Time.timeScale = 1;
+			creatEnemy.isGame = true;
+			pauseBtn.SetActive(true);
+			ContBtn.SetActive(false);
+		}
+		
+
 	}
 }
