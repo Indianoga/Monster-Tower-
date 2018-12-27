@@ -1,0 +1,1312 @@
+fileFormatVersion: 2
+guid: 7b3ddfd983f645246a692175be179f04
+timeCreated: 1545929722
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Armature_tex_0
+    21300002: Armature_tex_1
+    21300004: Armature_tex_2
+    21300006: Armature_tex_3
+    21300008: Armature_tex_4
+    21300010: Armature_tex_5
+    21300012: Armature_tex_6
+    21300014: Armature_tex_7
+    21300016: Armature_tex_8
+    21300018: Armature_tex_9
+    21300020: Armature_tex_10
+    21300022: Armature_tex_11
+    21300024: Armature_tex_12
+    21300026: Armature_tex_13
+    21300028: Armature_tex_14
+    21300030: Armature_tex_15
+    21300032: Armature_tex_16
+    21300034: Armature_tex_17
+    21300036: Armature_tex_18
+    21300038: Armature_tex_19
+    21300040: Armature_tex_20
+    21300042: Armature_tex_21
+    21300044: Armature_tex_22
+    21300046: Armature_tex_23
+    21300048: Armature_tex_24
+    21300050: Armature_tex_25
+    21300052: Armature_tex_26
+    21300054: Armature_tex_27
+    21300056: Armature_tex_28
+    21300058: Armature_tex_29
+    21300060: Armature_tex_30
+    21300062: Armature_tex_31
+    21300064: Armature_tex_32
+    21300066: Armature_tex_33
+    21300068: Armature_tex_34
+    21300070: Armature_tex_35
+    21300072: Armature_tex_36
+    21300074: Armature_tex_37
+    21300076: Armature_tex_38
+    21300078: Armature_tex_39
+    21300080: Armature_tex_40
+    21300082: Armature_tex_41
+    21300084: Armature_tex_42
+    21300086: Armature_tex_43
+    21300088: Armature_tex_44
+    21300090: Armature_tex_45
+    21300092: Armature_tex_46
+    21300094: Armature_tex_47
+    21300096: Armature_tex_48
+    21300098: Armature_tex_49
+    21300100: Armature_tex_50
+    21300102: Armature_tex_51
+    21300104: Armature_tex_52
+    21300106: Armature_tex_53
+    21300108: Armature_tex_54
+    21300110: Armature_tex_55
+    21300112: Armature_tex_56
+    21300114: Armature_tex_57
+    21300116: Armature_tex_58
+    21300118: Armature_tex_59
+    21300120: Armature_tex_60
+    21300122: Armature_tex_61
+    21300124: Armature_tex_62
+    21300126: Armature_tex_63
+    21300128: Armature_tex_64
+    21300130: Armature_tex_65
+    21300132: Armature_tex_66
+    21300134: Armature_tex_67
+    21300136: Armature_tex_68
+    21300138: Armature_tex_69
+    21300140: Armature_tex_70
+    21300142: Armature_tex_71
+    21300144: Armature_tex_72
+    21300146: Armature_tex_73
+    21300148: Armature_tex_74
+    21300150: Armature_tex_75
+    21300152: Armature_tex_76
+    21300154: Armature_tex_77
+    21300156: Armature_tex_78
+    21300158: Armature_tex_79
+    21300160: Armature_tex_80
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 300
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Armature_tex_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 2624
+        width: 236
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_1
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 2625
+        width: 235
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_2
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 2624
+        width: 235
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_3
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 2624
+        width: 235
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_4
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 2624
+        width: 235
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_5
+      rect:
+        serializedVersion: 2
+        x: 1379
+        y: 2625
+        width: 236
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_6
+      rect:
+        serializedVersion: 2
+        x: 1653
+        y: 2625
+        width: 235
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_7
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 2385
+        width: 236
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_8
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 2385
+        width: 237
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_9
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 2385
+        width: 236
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_10
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 2385
+        width: 236
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_11
+      rect:
+        serializedVersion: 2
+        x: 1379
+        y: 2385
+        width: 236
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_12
+      rect:
+        serializedVersion: 2
+        x: 1651
+        y: 2386
+        width: 237
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_13
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 2146
+        width: 235
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_14
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 2147
+        width: 235
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_15
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 2147
+        width: 235
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_16
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 2147
+        width: 236
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_17
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 2146
+        width: 235
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_18
+      rect:
+        serializedVersion: 2
+        x: 1379
+        y: 2146
+        width: 235
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_19
+      rect:
+        serializedVersion: 2
+        x: 1651
+        y: 2147
+        width: 237
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_20
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 1908
+        width: 235
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_21
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 1908
+        width: 236
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_22
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 1908
+        width: 235
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_23
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 1909
+        width: 235
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_24
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 1908
+        width: 236
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_25
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 1911
+        width: 234
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_26
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 1908
+        width: 235
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_27
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 1670
+        width: 235
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_28
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 1670
+        width: 236
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_29
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 1670
+        width: 235
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_30
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 1670
+        width: 235
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_31
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 1670
+        width: 235
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_32
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 1672
+        width: 236
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_33
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 1672
+        width: 235
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_34
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 1434
+        width: 235
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_35
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 1434
+        width: 235
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_36
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 1435
+        width: 235
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_37
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 1434
+        width: 235
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_38
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 1434
+        width: 235
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_39
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 1434
+        width: 236
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_40
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 1434
+        width: 235
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_41
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 1198
+        width: 235
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_42
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 1199
+        width: 235
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_43
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 1198
+        width: 235
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_44
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 1199
+        width: 235
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_45
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 1199
+        width: 236
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_46
+      rect:
+        serializedVersion: 2
+        x: 1377
+        y: 1199
+        width: 235
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_47
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 1199
+        width: 236
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_48
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 964
+        width: 235
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_49
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 964
+        width: 235
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_50
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 964
+        width: 235
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_51
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 964
+        width: 235
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_52
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 964
+        width: 236
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_53
+      rect:
+        serializedVersion: 2
+        x: 1377
+        y: 965
+        width: 235
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_54
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 965
+        width: 236
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_55
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 732
+        width: 235
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_56
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 732
+        width: 236
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_57
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 732
+        width: 234
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_58
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 732
+        width: 236
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_59
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 732
+        width: 235
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_60
+      rect:
+        serializedVersion: 2
+        x: 1377
+        y: 732
+        width: 235
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_61
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 733
+        width: 235
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_62
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 498
+        width: 233
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_63
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 500
+        width: 235
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_64
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 500
+        width: 235
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_65
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 500
+        width: 235
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_66
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 500
+        width: 236
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_67
+      rect:
+        serializedVersion: 2
+        x: 1377
+        y: 500
+        width: 235
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_68
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 500
+        width: 235
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_69
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 269
+        width: 233
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_70
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 268
+        width: 235
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_71
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 268
+        width: 235
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_72
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 269
+        width: 235
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_73
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 268
+        width: 236
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_74
+      rect:
+        serializedVersion: 2
+        x: 1377
+        y: 269
+        width: 235
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_75
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 269
+        width: 235
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_76
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 38
+        width: 233
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_77
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 40
+        width: 235
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_78
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 40
+        width: 233
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_79
+      rect:
+        serializedVersion: 2
+        x: 1377
+        y: 40
+        width: 235
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Armature_tex_80
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 40
+        width: 236
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
