@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class EnemyDeath : MonoBehaviour {
 
+	public int enemyLife;
 	void LeftPunch()
 	{
+		
 		GetComponent <Rigidbody> ().velocity = new Vector2 (10, 0);
 		GetComponent <Rigidbody> ().isKinematic = false;
 		GetComponent <Rigidbody> ().AddTorque(new Vector3 (0,0,-1) * 100 * 100);
@@ -14,6 +16,7 @@ public class EnemyDeath : MonoBehaviour {
 
 	void RightPunch()
 	{
+		
 		GetComponent <Rigidbody> ().velocity = new Vector2 (-10, 0);
 		GetComponent <Rigidbody> ().isKinematic = false;
 		GetComponent <Rigidbody> ().AddTorque(new Vector3 (0,0,1) * 100 * 100);

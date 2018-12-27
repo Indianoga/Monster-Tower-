@@ -16,7 +16,7 @@ public class CreatEnemy : MonoBehaviour {
 	EnemyLifePrefabControl [] enemyLifePrefabControl;
 	
 	GameObject newEnemy;
-	int enemyLife;
+	int enemyLifeManager;
 	int startPosition;
 
 	List <GameObject> enemyList;
@@ -38,42 +38,46 @@ public class CreatEnemy : MonoBehaviour {
 	void Update () 
 	{
 		
-
+		Debug.Log(enemyLifeManager);
 		if (Input.GetButtonDown("Fire1"))
 		{
 			if (Input.mousePosition.x > Screen.width/2)
 			{
 				SendMessage("Right");
-				enemyLife--;
-				if (enemyLife <= 0)
+				playerSide = true;
+				if (enemyList[0].GetComponent<EnemyDeath>().enemyLife <= 0)
 				{
 					enemyList[0].SendMessage("RightPunch");
 					enemyList.RemoveAt(0);
 					repositionEnemy();
 				}
-				
-				playerSide = true;
+				else
+				{
+					enemyList[0].GetComponent<EnemyDeath>().enemyLife--;
+				}
 			}
 			
 			else
 			{
-				enemyLife--;
 				SendMessage("Left");
-				if (enemyLife <= 0)
+				playerSide = false;
+				if (enemyList[0].GetComponent<EnemyDeath>().enemyLife <= 0)
 				{
 					enemyList[0].SendMessage("LeftPunch");
 					enemyList.RemoveAt(0);
 					repositionEnemy();
 				}
+				else
+				{
+					enemyList[0].GetComponent<EnemyDeath>().enemyLife--;
+				}
 				
-				
-				playerSide = false;
 				
 			}
 		
 			
 			enemyCont++;
-			//TakeDamage();
+			
 			DoDamage();
 			
 			
@@ -143,18 +147,6 @@ public class CreatEnemy : MonoBehaviour {
 			}
 		}
 	}
-	void TakeDamage()
-	{
-		if (enemyList[0].CompareTag("enemy"))
-		{
-			if((enemyList[0].name == "MonsterShieldEsq(Clone)") || (enemyList[0].name == "MonsterShieldDir(Clone)" ))
-			{
-				enemyLife = enemyLifePrefabControl[3].enemyLife;
-			}
-			Debug.Log(enemyLife);
-		}
-	}
-
 	void GameOver()
 	{
 		

@@ -6,7 +6,6 @@ using UnityEngine;
 public class EnemyLifePrefabControl 
  {
 	 public string IdPrefab;
-	 public int enemyLife;
 	 public GameObject enemyPrefab;
 	
  }
