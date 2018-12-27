@@ -38,7 +38,7 @@ public class CreatEnemy : MonoBehaviour {
 	void Update () 
 	{
 		
-		Debug.Log(enemyLifeManager);
+		
 		if (Input.GetButtonDown("Fire1"))
 		{
 			if (Input.mousePosition.x > Screen.width/2)

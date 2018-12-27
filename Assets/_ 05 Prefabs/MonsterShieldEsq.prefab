@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf159c6d47f21474aae49dd37c7dd833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyLife: 3
+  enemyLife: 2
 --- !u!212 &212067260765260342
 SpriteRenderer:
   m_ObjectHideFlags: 1
