@@ -9,6 +9,8 @@ public class CreatEnemy : MonoBehaviour {
 	
 
 	bool playerSide;
+	public bool isGame = false;
+
 	[SerializeField]
 	GameObject gameManager;
 	Player playerScripting;
@@ -26,30 +28,30 @@ public class CreatEnemy : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		
 		enemyList = new List <GameObject>();
 		playerScripting = gameManager.GetComponent<Player>();
 		InstantiateEnemy();
-		
-		
-		
+	
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		
-		
-		if (Input.GetButtonDown("Fire1"))
+		if (isGame)
 		{
-			if (Input.mousePosition.x > Screen.width/2)
+			
+			if (Input.GetButtonDown("Fire1"))
 			{
-				SendMessage("Right");
-				playerSide = true;
-				if (enemyList[0].GetComponent<EnemyDeath>().enemyLife <= 0)
+				if (Input.mousePosition.x > Screen.width/2)
 				{
-					enemyList[0].SendMessage("RightPunch");
-					enemyList.RemoveAt(0);
-					repositionEnemy();
+					SendMessage("Right");
+					playerSide = true;
+					if (enemyList[0].GetComponent<EnemyDeath>().enemyLife <= 0)
+					{
+						enemyList[0].SendMessage("RightPunch");
+						enemyList.RemoveAt(0);
+						repositionEnemy();
 				}
 				else
 				{
@@ -71,19 +73,15 @@ public class CreatEnemy : MonoBehaviour {
 				{
 					enemyList[0].GetComponent<EnemyDeath>().enemyLife--;
 				}
-				
-				
 			}
-		
-			
 			enemyCont++;
-			
 			DoDamage();
-			
-			
 		}
-			
+		}
+		
 	}
+
+
 	
 	GameObject RandomEnemy (Vector2 posicao)
 	{
