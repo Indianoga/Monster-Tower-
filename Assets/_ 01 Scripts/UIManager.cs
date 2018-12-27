@@ -11,12 +11,10 @@ public class UIManager : MonoBehaviour
 	GameObject pauseBtn;
 	[SerializeField]
 	GameObject ContBtn;
-	
-
-
 	[SerializeField]
 	GameObject gameManager;
 	CreatEnemy creatEnemy;
+	Player player;
 
 	// Use this for initialization
 	void Start () 
@@ -24,6 +22,11 @@ public class UIManager : MonoBehaviour
 		pauseBtn.SetActive(false);
 		ContBtn.SetActive(false);
 		creatEnemy = gameManager.GetComponent<CreatEnemy>();
+		player = gameManager.GetComponent<Player>();
+		for (int i = 0; i < player.playerImagLife.Length; i++)
+		{
+			player.playerImagLife[i].SetActive(false);
+		}
 	}
 	
 	// Update is called once per frame
@@ -37,6 +40,10 @@ public class UIManager : MonoBehaviour
 		playBtn.SetActive(false);
 		pauseBtn.SetActive(true);
 		creatEnemy.isGame = true;
+		for (int i = 0; i < player.playerImagLife.Length; i++)
+		{
+			player.playerImagLife[i].SetActive(true);
+		}
 		
 	}
 
