@@ -415,7 +415,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4986172060585448, guid: 3bb570a14bd5e5e40b256d4c281eab15, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.76
+      value: -3.668
       objectReference: {fileID: 0}
     - target: {fileID: 4986172060585448, guid: 3bb570a14bd5e5e40b256d4c281eab15, type: 2}
       propertyPath: m_LocalPosition.z
@@ -454,9 +454,49 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4641626855741282, guid: 3bb570a14bd5e5e40b256d4c281eab15, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641626855741282, guid: 3bb570a14bd5e5e40b256d4c281eab15, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641626855741282, guid: 3bb570a14bd5e5e40b256d4c281eab15, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212505162095061592, guid: 3bb570a14bd5e5e40b256d4c281eab15,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0aeef06fa0af8a742bdd65445174e7e9,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3bb570a14bd5e5e40b256d4c281eab15, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &894606952 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1822421451755280, guid: 3bb570a14bd5e5e40b256d4c281eab15,
+    type: 2}
+  m_PrefabInternal: {fileID: 894606951}
+--- !u!95 &894606953
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 894606952}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b41e4642a4f67864eb679ff4bd7b2114, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1021296009
 GameObject:
   m_ObjectHideFlags: 0
