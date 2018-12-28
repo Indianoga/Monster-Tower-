@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour 
 {
@@ -37,6 +38,13 @@ public class Player : MonoBehaviour
 		
 		playerPrefab.transform.position = new Vector3(-1.01f, playerPrefab.transform.position.y, 0);
 		playerPrefab.transform.localScale = new Vector3 (playerScale, 1,1);
+	}
+
+	private void OnTriggerEnter(Collider other) 
+	{
+		if (other.gameObject.CompareTag("fireBall"))
+		{
+			SceneManager.LoadScene("Game");		}
 	}
 
 	

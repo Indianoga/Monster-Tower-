@@ -277,6 +277,34 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!1 &170230654
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 170230655}
+  m_Layer: 0
+  m_Name: FireBall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &170230655
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 170230654}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1, y: 4.18, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 587181442}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &318838791
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,6 +517,34 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 492292173}
+--- !u!1 &555658637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 555658638}
+  m_Layer: 0
+  m_Name: FireBall 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &555658638
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 555658637}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.18, y: 4.11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 587181442}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &557924783
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,7 +605,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &568736808
 GameObject:
@@ -642,6 +698,36 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!1 &587181441
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 587181442}
+  m_Layer: 0
+  m_Name: FireBallSpawns
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &587181442
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 587181441}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 170230655}
+  - {fileID: 555658638}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &685787105
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,6 +1306,7 @@ MonoBehaviour:
   pauseBtn: {fileID: 1066088732}
   ContBtn: {fileID: 492292173}
   gameManager: {fileID: 1851665431}
+  playerManager: {fileID: 2047051809}
 --- !u!1 &1021296009
 GameObject:
   m_ObjectHideFlags: 0
@@ -1629,7 +1716,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1851665433}
   - component: {fileID: 1851665432}
-  - component: {fileID: 1851665434}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -1649,7 +1735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGame: 0
-  gameManager: {fileID: 1851665431}
+  playerManager: {fileID: 2047051809}
   enemyLifePrefabControl:
   - IdPrefab: bone
     enemyPrefab: {fileID: 1372971796385552, guid: 25dd08318471b3547962a39e5317484f,
@@ -1666,6 +1752,10 @@ MonoBehaviour:
   - IdPrefab: boneShieldLeft
     enemyPrefab: {fileID: 1772138149000752, guid: f64a4990c8f713046941c29c1dc3f1a3,
       type: 2}
+  FireBallSpawner:
+  - {fileID: 170230655}
+  - {fileID: 555658638}
+  fireBall: {fileID: 1221772154904882, guid: 1041e5c121c889449a54a3628cf6e4d9, type: 2}
   enemyCont: 0
 --- !u!4 &1851665433
 Transform:
@@ -1680,23 +1770,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1851665434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1851665431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e096b982ab5742849ab03c7a8d284dff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerImagLife:
-  - {fileID: 685787105}
-  - {fileID: 318838791}
-  - {fileID: 1942969245}
-  playerPrefab: {fileID: 2047051809}
-  playerLife: 3
 --- !u!1 &1942969245
 GameObject:
   m_ObjectHideFlags: 0
@@ -1793,6 +1866,50 @@ GameObject:
   m_PrefabParentObject: {fileID: 1786533414392496, guid: 3bb570a14bd5e5e40b256d4c281eab15,
     type: 2}
   m_PrefabInternal: {fileID: 894606951}
+--- !u!65 &2047051810
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2047051809}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8, y: 0.7, z: 1}
+  m_Center: {x: -0.04872051, y: 0.54342055, z: 0}
+--- !u!54 &2047051811
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2047051809}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &2047051813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2047051809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e096b982ab5742849ab03c7a8d284dff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerImagLife:
+  - {fileID: 685787105}
+  - {fileID: 318838791}
+  - {fileID: 1942969245}
+  playerPrefab: {fileID: 2047051809}
+  playerLife: 3
 --- !u!1 &2090758010
 GameObject:
   m_ObjectHideFlags: 0

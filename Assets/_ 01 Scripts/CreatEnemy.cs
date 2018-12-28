@@ -4,21 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class CreatEnemy : MonoBehaviour {
-
-	
-	
+public class CreatEnemy : MonoBehaviour 
+{	
 	bool playerSide;
-
 	public bool isGame = false;
-
 	[SerializeField]
-	GameObject gameManager;
+	GameObject playerManager;
 	Player player;
 	[SerializeField]
 	EnemyLifePrefabControl [] enemyLifePrefabControl;
-	
-	GameObject newEnemy;
+	[SerializeField]
+	Transform[] FireBallSpawner;
+	[SerializeField]
+	GameObject fireBall;
+	float time;
 	int enemyLifeManager;
 	int startPosition;
 
@@ -31,8 +30,9 @@ public class CreatEnemy : MonoBehaviour {
 	{
 		
 		enemyList = new List <GameObject>();
-		player = gameManager.GetComponent<Player>();
+		player = playerManager.GetComponent<Player>();
 		InstantiateEnemy();
+		
 	
 	}
 	
@@ -46,7 +46,7 @@ public class CreatEnemy : MonoBehaviour {
 			{
 				if (Input.mousePosition.x > Screen.width/2)
 				{
-					SendMessage("Right");
+					player.Right();
 					playerSide = true;
 					if (enemyList[0].GetComponent<EnemyDeath>().enemyLife <= 0)
 					{
@@ -62,7 +62,7 @@ public class CreatEnemy : MonoBehaviour {
 			
 			else
 			{
-				SendMessage("Left");
+				player.Left();
 				playerSide = false;
 				if (enemyList[0].GetComponent<EnemyDeath>().enemyLife <= 0)
 				{
@@ -75,11 +75,22 @@ public class CreatEnemy : MonoBehaviour {
 					enemyList[0].GetComponent<EnemyDeath>().enemyLife--;
 				}
 			}
-			enemyCont++;
-			DoDamage();
-		}
+				enemyCont++;
+				DoDamage();
+			}
+			TimerCount();
+			if (time >= 1f)
+			{
+				FireBallInstatiate();
+				time = 0;
+			}
 		}
 		
+	}
+
+	void TimerCount()
+	{
+		time += 1 * Time.deltaTime; 
 	}
 
 
@@ -103,7 +114,13 @@ public class CreatEnemy : MonoBehaviour {
 
 	}
 
-	
+
+	void FireBallInstatiate()
+	{
+		int index = Random.Range(0, FireBallSpawner.Length);
+		GameObject newFireBall = Instantiate (fireBall, FireBallSpawner[index].position, FireBallSpawner[index].rotation);
+		
+	}
 
 	void InstantiateEnemy()
 	{
@@ -158,6 +175,7 @@ public class CreatEnemy : MonoBehaviour {
 				}
 			}
 		}
+
 	}
 	void GameOver()
 	{
