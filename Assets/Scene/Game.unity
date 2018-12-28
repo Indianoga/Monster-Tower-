@@ -429,8 +429,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 90.299995, y: 167.00002}
-  m_SizeDelta: {x: 36.59, y: 30}
+  m_AnchoredPosition: {x: 90.302, y: 167}
+  m_SizeDelta: {x: 51.175, y: 41.964}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &492292175
 MonoBehaviour:
@@ -503,7 +503,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 92a64e4dbbdb6f446b4c68628369bdb1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1c1e9052b07ad8b4e9a3104bb4283f43, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -922,7 +922,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Start
+  m_Text: 
 --- !u!222 &839743579
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1107,8 +1107,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -106}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -3, y: -97}
+  m_SizeDelta: {x: 196.86, y: 124.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &981191789
 MonoBehaviour:
@@ -1181,9 +1181,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
+  m_Sprite: {fileID: 21300000, guid: d2d19462bd49cda448e87f870b5026ec, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1414,7 +1414,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 90.3, y: 167}
-  m_SizeDelta: {x: 36.59, y: 30}
+  m_SizeDelta: {x: 51.17, y: 41.96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1066088734
 MonoBehaviour:
@@ -1487,7 +1487,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 5ac6d068031cb2c488bdd3d8354c1c51, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8f88e4e429eb3ac4c9b4f2727b2a05d9, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

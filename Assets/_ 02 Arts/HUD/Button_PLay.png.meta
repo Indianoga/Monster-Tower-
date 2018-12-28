@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: b6222be3506299f43a14d94457f0036a
-timeCreated: 1545260658
+guid: d2d19462bd49cda448e87f870b5026ec
+timeCreated: 1546031413
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
@@ -60,8 +60,8 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
+    textureCompression: 2
+    compressionQuality: 40
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
@@ -70,8 +70,8 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
+    textureCompression: 2
+    compressionQuality: 40
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
@@ -80,8 +80,8 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
+    textureCompression: 2
+    compressionQuality: 40
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
