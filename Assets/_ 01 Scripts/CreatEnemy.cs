@@ -8,6 +8,7 @@ public class CreatEnemy : MonoBehaviour
 {	
 	bool playerSide;
 	public bool isGame = false;
+	public float delayPunchTime;
 	[SerializeField]
 	GameObject playerManager;
 	Player player;
@@ -107,31 +108,27 @@ public class CreatEnemy : MonoBehaviour
 					playerSide = true;
 					if (enemyList[0].GetComponent<EnemyDeath>().enemyLife <= 0)
 					{
-						enemyList[0].GetComponent<EnemyDeath>().RightPunch();
-						enemyList.RemoveAt(0);
-						repositionEnemy();
-				}
-				else
-				{
+						StartCoroutine("DoRight");	
+					}
+					else
+					{
 					enemyList[0].GetComponent<EnemyDeath>().enemyLife--;
+					}
 				}
-			}
 			
-			else
-			{
-				player.Left();
-				playerSide = false;
-				if (enemyList[0].GetComponent<EnemyDeath>().enemyLife <= 0)
-				{
-					enemyList[0].GetComponent<EnemyDeath>().LeftPunch();
-					enemyList.RemoveAt(0);
-					repositionEnemy();
-				}
 				else
 				{
+					player.Left();
+					playerSide = false;
+					if (enemyList[0].GetComponent<EnemyDeath>().enemyLife <= 0)
+					{
+						StartCoroutine("DoLeft");
+					}
+					else
+					{
 					enemyList[0].GetComponent<EnemyDeath>().enemyLife--;
+					}
 				}
-			}
 				enemyCont++;
 				DoDamage();
 			}
@@ -142,6 +139,21 @@ public class CreatEnemy : MonoBehaviour
 				time = 0;
 			}
 		}
+	}
+	IEnumerator DoLeft()
+	{
+		yield return new WaitForSeconds(delayPunchTime);
+		enemyList[0].GetComponent<EnemyDeath>().LeftPunch();
+		enemyList.RemoveAt(0);
+		repositionEnemy();
+	}
+
+	IEnumerator DoRight()
+	{
+		yield return new WaitForSeconds(delayPunchTime);
+		enemyList[0].GetComponent<EnemyDeath>().RightPunch();
+		enemyList.RemoveAt(0);
+		repositionEnemy();
 	}
 
 	void TimerCount()
