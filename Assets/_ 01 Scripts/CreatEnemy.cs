@@ -108,7 +108,10 @@ public class CreatEnemy : MonoBehaviour
 					playerSide = true;
 					if (enemyList[0].GetComponent<EnemyDeath>().enemyLife <= 0)
 					{
-						StartCoroutine("DoRight");	
+						//StartCoroutine("DoRight");	
+						enemyList[0].GetComponent<EnemyDeath>().RightPunch();
+						enemyList.RemoveAt(0);
+						repositionEnemy();
 					}
 					else
 					{
@@ -122,7 +125,10 @@ public class CreatEnemy : MonoBehaviour
 					playerSide = false;
 					if (enemyList[0].GetComponent<EnemyDeath>().enemyLife <= 0)
 					{
-						StartCoroutine("DoLeft");
+						//StartCoroutine("DoLeft");
+						enemyList[0].GetComponent<EnemyDeath>().LeftPunch();
+						enemyList.RemoveAt(0);
+						repositionEnemy();
 					}
 					else
 					{

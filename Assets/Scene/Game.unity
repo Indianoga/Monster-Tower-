@@ -1747,6 +1747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGame: 0
+  delayPunchTime: 0
   playerManager: {fileID: 2047051809}
   enemyLifePrefabControl:
   - IdPrefab: bone
