@@ -5,22 +5,36 @@ using UnityEngine;
 public class EnemyDeath : MonoBehaviour {
 
 	public int enemyLife;
+	public float delayTime;
 	public void LeftPunch()
 	{
-		
-		GetComponent <Rigidbody> ().velocity = new Vector2 (10, 0);
-		GetComponent <Rigidbody> ().isKinematic = false;
-		GetComponent <Rigidbody> ().AddTorque(new Vector3 (0,0,-1) * 100 * 100);
-		Invoke ("Delete", 2.0f); 
+		StartCoroutine("DoLeft");	
 	}
 
 	public void RightPunch()
 	{
 		
+		StartCoroutine("DoRight");
+	}
+
+	IEnumerator DoLeft()
+	{
+		yield return new WaitForSeconds(delayTime);
+		GetComponent <Rigidbody> ().velocity = new Vector2 (10, 0);
+		GetComponent <Rigidbody> ().isKinematic = false;
+		GetComponent <Rigidbody> ().AddTorque(new Vector3 (0,0,-1) * 100 * 100);
+		Invoke ("Delete", 2.0f); 
+		
+	}
+
+	IEnumerator DoRight()
+	{
+		yield return new WaitForSeconds(delayTime);
 		GetComponent <Rigidbody> ().velocity = new Vector2 (-10, 0);
 		GetComponent <Rigidbody> ().isKinematic = false;
 		GetComponent <Rigidbody> ().AddTorque(new Vector3 (0,0,1) * 100 * 100);
 		Invoke ("Delete", 2.0f);
+		
 	}
 
 	void Delete()
