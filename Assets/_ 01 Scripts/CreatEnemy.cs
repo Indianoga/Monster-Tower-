@@ -107,8 +107,7 @@ public class CreatEnemy : MonoBehaviour
 					player.Right();
 					playerSide = true;
 					if (enemyList[0].GetComponent<EnemyDeath>().enemyLife <= 0)
-					{
-						//StartCoroutine("DoRight");	
+					{	
 						enemyList[0].GetComponent<EnemyDeath>().RightPunch();
 						enemyList.RemoveAt(0);
 						repositionEnemy();
@@ -125,7 +124,6 @@ public class CreatEnemy : MonoBehaviour
 					playerSide = false;
 					if (enemyList[0].GetComponent<EnemyDeath>().enemyLife <= 0)
 					{
-						//StartCoroutine("DoLeft");
 						enemyList[0].GetComponent<EnemyDeath>().LeftPunch();
 						enemyList.RemoveAt(0);
 						repositionEnemy();
@@ -146,29 +144,11 @@ public class CreatEnemy : MonoBehaviour
 			}
 		}
 	}
-	IEnumerator DoLeft()
-	{
-		yield return new WaitForSeconds(delayPunchTime);
-		enemyList[0].GetComponent<EnemyDeath>().LeftPunch();
-		enemyList.RemoveAt(0);
-		repositionEnemy();
-	}
-
-	IEnumerator DoRight()
-	{
-		yield return new WaitForSeconds(delayPunchTime);
-		enemyList[0].GetComponent<EnemyDeath>().RightPunch();
-		enemyList.RemoveAt(0);
-		repositionEnemy();
-	}
-
 	void TimerCount()
 	{
 		time += 1 * Time.deltaTime; 
 	}
 
-
-	
 	GameObject RandomEnemy (Vector2 posicao)
 	{
 		int index = Random.Range(0,enemyLifePrefabControl.Length);
