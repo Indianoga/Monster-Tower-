@@ -81,7 +81,7 @@ public class CreatEnemy : MonoBehaviour
 			TimerCount();
 			if (time >= 1f)
 			{
-				FireBallInstatiate();
+				//FireBallInstatiate();
 				time = 0;
 			}
 		}

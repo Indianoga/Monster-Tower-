@@ -7,10 +7,14 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour 
 {
 	[SerializeField]
+	Animator playerAnin;
+
+	[SerializeField]
 	public GameObject[] playerImagLife;
 
 	[SerializeField]
 	GameObject playerPrefab;
+
 	[SerializeField]
 	public int playerLife;
 	float playerScale;
@@ -19,6 +23,7 @@ public class Player : MonoBehaviour
 	void Start () 
 	{
 		playerScale = transform.localScale.x;
+		playerAnin = GetComponentInChildren<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -32,12 +37,16 @@ public class Player : MonoBehaviour
 		
 		playerPrefab.transform.position = new Vector3(0.99f, playerPrefab.transform.position.y, 0);
 		playerPrefab.transform.localScale = new Vector3 (-playerScale, 1,1);
+		playerAnin.SetTrigger("punch");
+
+
 	}
 	public void Left()
 	{
 		
 		playerPrefab.transform.position = new Vector3(-1.01f, playerPrefab.transform.position.y, 0);
 		playerPrefab.transform.localScale = new Vector3 (playerScale, 1,1);
+		playerAnin.SetTrigger("punch");
 	}
 
 	private void OnTriggerEnter(Collider other) 
