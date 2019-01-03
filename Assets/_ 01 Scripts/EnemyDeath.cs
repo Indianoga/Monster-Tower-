@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyDeath : MonoBehaviour {
 
 	public int enemyLife;
-	void LeftPunch()
+	public void LeftPunch()
 	{
 		
 		GetComponent <Rigidbody> ().velocity = new Vector2 (10, 0);
@@ -14,7 +14,7 @@ public class EnemyDeath : MonoBehaviour {
 		Invoke ("Delete", 2.0f); 
 	}
 
-	void RightPunch()
+	public void RightPunch()
 	{
 		
 		GetComponent <Rigidbody> ().velocity = new Vector2 (-10, 0);

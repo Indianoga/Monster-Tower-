@@ -39,6 +39,63 @@ public class CreatEnemy : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		//pcGame();
+		androidGame();
+		
+	}
+
+	void pcGame()
+	{
+		if (isGame)
+		{
+			
+			if (Input.GetKeyDown(KeyCode.RightArrow))
+			{
+				player.Right();
+				playerSide = true;
+				if (enemyList[0].GetComponent<EnemyDeath>().enemyLife <= 0)
+					{
+						enemyList[0].GetComponent<EnemyDeath>().RightPunch();
+						enemyList.RemoveAt(0);
+						repositionEnemy();
+					}
+					else
+					{
+						enemyList[0].GetComponent<EnemyDeath>().enemyLife--;
+					}
+					DoDamage();
+			}
+			
+			if (Input.GetKeyDown(KeyCode.LeftArrow))
+			{
+				player.Left();
+				playerSide = false;
+				if (enemyList[0].GetComponent<EnemyDeath>().enemyLife <= 0)
+				{
+					enemyList[0].GetComponent<EnemyDeath>().LeftPunch();
+					enemyList.RemoveAt(0);
+					repositionEnemy();
+				}
+				else
+				{
+					enemyList[0].GetComponent<EnemyDeath>().enemyLife--;
+				}
+				DoDamage();
+			
+			}
+		    	
+				enemyCont++;
+				TimerCount();
+				if (time >= 1f)
+				{
+					//FireBallInstatiate();
+					time = 0;
+				}
+		}
+	}
+
+	void androidGame()
+	{
 		if (isGame)
 		{
 			
@@ -50,7 +107,7 @@ public class CreatEnemy : MonoBehaviour
 					playerSide = true;
 					if (enemyList[0].GetComponent<EnemyDeath>().enemyLife <= 0)
 					{
-						enemyList[0].SendMessage("RightPunch");
+						enemyList[0].GetComponent<EnemyDeath>().RightPunch();
 						enemyList.RemoveAt(0);
 						repositionEnemy();
 				}
@@ -66,7 +123,7 @@ public class CreatEnemy : MonoBehaviour
 				playerSide = false;
 				if (enemyList[0].GetComponent<EnemyDeath>().enemyLife <= 0)
 				{
-					enemyList[0].SendMessage("LeftPunch");
+					enemyList[0].GetComponent<EnemyDeath>().LeftPunch();
 					enemyList.RemoveAt(0);
 					repositionEnemy();
 				}
@@ -85,7 +142,6 @@ public class CreatEnemy : MonoBehaviour
 				time = 0;
 			}
 		}
-		
 	}
 
 	void TimerCount()
@@ -167,12 +223,9 @@ public class CreatEnemy : MonoBehaviour
 				if (player.playerLife <= 0)
 				{
 					player.playerImagLife[0].SetActive(false);
-				}
-				
-				if (player.playerLife <= 0)
-				{
 					GameOver();
 				}
+				
 			}
 		}
 
