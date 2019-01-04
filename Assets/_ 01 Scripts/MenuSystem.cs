@@ -42,4 +42,6 @@ public class MenuSystem : MonoBehaviour {
 			quitMenuPrefab.SetActive(false);
 		}
 	}
+
+	
 }

@@ -13,7 +13,7 @@ public class SceneManagerSystem : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		
+		CloseApp();
 	}
 
 	public void GoMenu()
@@ -35,5 +35,13 @@ public class SceneManagerSystem : MonoBehaviour {
 	public void CloseGame()
 	{
 		Application.Quit();
+	}
+
+	void CloseApp()
+	{
+		if(Input.GetKeyDown(KeyCode.Escape))
+		{
+			Application.Quit();
+		}
 	}
 }
