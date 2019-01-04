@@ -41,7 +41,6 @@ public class CreatEnemy : MonoBehaviour
 	{
 		//pcGame();
 		androidGame();
-		
 	}
 
 	

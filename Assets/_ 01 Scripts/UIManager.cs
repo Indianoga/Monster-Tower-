@@ -16,6 +16,9 @@ public class UIManager : MonoBehaviour
 	CreatEnemy creatEnemy;
 	[SerializeField]
 	GameObject playerManager;
+
+	[SerializeField]
+	GameObject menuBtn;
 	Player player;
 
 	// Use this for initialization
@@ -23,6 +26,7 @@ public class UIManager : MonoBehaviour
 	{
 		pauseBtn.SetActive(false);
 		ContBtn.SetActive(false);
+		
 		creatEnemy = gameManager.GetComponent<CreatEnemy>();
 		player = playerManager.GetComponent<Player>();
 		for (int i = 0; i < player.playerImagLife.Length; i++)
@@ -42,6 +46,7 @@ public class UIManager : MonoBehaviour
 		playBtn.SetActive(false);
 		pauseBtn.SetActive(true);
 		creatEnemy.isGame = true;
+		menuBtn.SetActive(false);
 		for (int i = 0; i < player.playerImagLife.Length; i++)
 		{
 			player.playerImagLife[i].SetActive(true);

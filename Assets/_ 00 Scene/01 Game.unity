@@ -408,14 +408,14 @@ RectTransform:
   m_GameObject: {fileID: 492292173}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.99983144, y: 0.99983144, z: 0.99983144}
+  m_LocalScale: {x: 0.9998318, y: 0.9998318, z: 0.9998318}
   m_Children: []
   m_Father: {fileID: 747174245}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 108.402, y: 215.6}
+  m_AnchoredPosition: {x: 108.40199, y: 215.60002}
   m_SizeDelta: {x: 51.175, y: 41.964}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &492292175
@@ -635,7 +635,7 @@ GameObject:
   - component: {fileID: 620855425}
   - component: {fileID: 620855424}
   m_Layer: 5
-  m_Name: Quit
+  m_Name: Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1286,6 +1286,7 @@ MonoBehaviour:
   ContBtn: {fileID: 492292173}
   gameManager: {fileID: 1851665431}
   playerManager: {fileID: 2047051809}
+  menuBtn: {fileID: 620855422}
 --- !u!1 &1066088732
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,7 +1311,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1066088732}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1319,7 +1320,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 108.4, y: 215.6}
+  m_AnchoredPosition: {x: 108.399994, y: 215.60002}
   m_SizeDelta: {x: 51.17, y: 41.96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1066088734
@@ -1693,7 +1694,7 @@ Prefab:
     - target: {fileID: 224272500495927488, guid: 593fabe1682bc7443bbd50ee156eec2e,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 224272500495927488, guid: 593fabe1682bc7443bbd50ee156eec2e,
         type: 2}
