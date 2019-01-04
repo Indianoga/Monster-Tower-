@@ -24,4 +24,16 @@ public class SceneManagerSystem : MonoBehaviour {
 	{
 		LoadingScreenManager.LoadScene(1);
 	}
+	public void GoStore()
+	{
+		LoadingScreenManager.LoadScene(2);
+	}
+	public void GoCredits()
+	{
+		LoadingScreenManager.LoadScene(3);
+	}
+	public void CloseGame()
+	{
+		Application.Quit();
+	}
 }
