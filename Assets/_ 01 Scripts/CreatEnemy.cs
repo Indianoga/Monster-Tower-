@@ -230,9 +230,6 @@ public class CreatEnemy : MonoBehaviour
 	}
 	void GameOver()
 	{
-		
-		SceneManager.LoadScene("Game");
-		
-		
+		LoadingScreenManager.LoadScene(1);
 	}
 }
