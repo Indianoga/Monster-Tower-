@@ -34,19 +34,17 @@ public class Player : MonoBehaviour
 
 	public void Right()
 	{
-		
 		playerPrefab.transform.position = new Vector3(0.99f, playerPrefab.transform.position.y, 0);
 		playerPrefab.transform.localScale = new Vector3 (-playerScale, 1,1);
 		playerAnin.SetTrigger("punch");
-
-
+		SoundManager.instance.Play("Player",SoundManager.instance.clipList.punchMaleEffect);
 	}
 	public void Left()
 	{
-		
 		playerPrefab.transform.position = new Vector3(-1.01f, playerPrefab.transform.position.y, 0);
 		playerPrefab.transform.localScale = new Vector3 (playerScale, 1,1);
 		playerAnin.SetTrigger("punch");
+		SoundManager.instance.Play("Player",SoundManager.instance.clipList.punchMaleEffect);
 	}
 
 	private void OnTriggerEnter(Collider other) 

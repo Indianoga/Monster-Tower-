@@ -5,15 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagerSystem : MonoBehaviour {
 
+
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		CloseApp();
+		//CloseApp();
 	}
 
 	public void GoMenu()

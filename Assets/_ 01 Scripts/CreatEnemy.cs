@@ -26,6 +26,11 @@ public class CreatEnemy : MonoBehaviour
 
 	public int enemyCont;
 
+	[Header("UI Manager")]
+	[Space(10)]
+	[SerializeField]
+	GameObject quitPrefab;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -34,7 +39,6 @@ public class CreatEnemy : MonoBehaviour
 		player = playerManager.GetComponent<Player>();
 		InstantiateEnemy();
 		
-	
 	}
 	
 	// Update is called once per frame
@@ -45,6 +49,17 @@ public class CreatEnemy : MonoBehaviour
 		
 	}
 
+	public void OpenQuitMenu(bool open)
+	{
+		if(!open)
+		{
+			quitPrefab.SetActive(true);
+		}
+		else
+		{
+			quitPrefab.SetActive(false);
+		}
+	}
 	void pcGame()
 	{
 		if (isGame)
