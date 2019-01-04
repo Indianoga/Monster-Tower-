@@ -699,8 +699,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1851665432}
-        m_MethodName: OpenQuitMenu
+      - m_Target: {fileID: 1851665434}
+        m_MethodName: OpenMenuConfirmation
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1808,11 +1808,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1851665432}
+      objectReference: {fileID: 1851665434}
     - target: {fileID: 114367800832738736, guid: 593fabe1682bc7443bbd50ee156eec2e,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenQuitMenu
+      value: OpenMenuConfirmation
       objectReference: {fileID: 0}
     - target: {fileID: 114367800832738736, guid: 593fabe1682bc7443bbd50ee156eec2e,
         type: 2}
@@ -1965,7 +1965,6 @@ MonoBehaviour:
   - {fileID: 555658638}
   fireBall: {fileID: 1221772154904882, guid: 1041e5c121c889449a54a3628cf6e4d9, type: 2}
   enemyCont: 0
-  quitPrefab: {fileID: 2051265069}
 --- !u!4 &1851665433
 Transform:
   m_ObjectHideFlags: 0
@@ -1990,6 +1989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 893698622033ee04eb55d2ba8f84c92c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuConfirmation: {fileID: 2051265069}
 --- !u!82 &1851665435
 AudioSource:
   m_ObjectHideFlags: 0
