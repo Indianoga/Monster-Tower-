@@ -18,14 +18,25 @@ public class CreatEnemy : MonoBehaviour
 	Transform[] FireBallSpawner;
 	[SerializeField]
 	GameObject fireBall;
+
+	[Header ("Game Over System")]
+	[SerializeField]
+	GameObject gameOverPrefab;
+	[SerializeField]
+	Animator gameOverPanel;
+
 	float time;
+	
 	int enemyLifeManager;
 	int startPosition;
 
 	List <GameObject> enemyList;
-
+	
 	AdsComponent ads;
 	public int enemyCont;
+
+
+
 
 	// Use this for initialization
 	void Start () 
@@ -223,15 +234,19 @@ public class CreatEnemy : MonoBehaviour
 				if (player.playerLife <= 0)
 				{
 					player.playerImagLife[0].SetActive(false);
-					GameOver();
+					StartCoroutine("GameOver");
 				}
 				
 			}
 		}
 
 	}
-	void GameOver()
+	IEnumerator GameOver()
 	{
+		
+		gameOverPrefab.SetActive(true);
+		gameOverPanel.SetTrigger("DoFade");
+		yield return new WaitForSeconds(1f);
 		LoadingScreenManager.LoadScene(1);
 	}
 }
