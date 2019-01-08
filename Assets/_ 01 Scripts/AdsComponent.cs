@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class AdsComponent : MonoBehaviour {
 
-	public static AdsComponent instance;
+	
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		
 	}
 	

@@ -24,6 +24,7 @@ public class CreatEnemy : MonoBehaviour
 
 	List <GameObject> enemyList;
 
+	AdsComponent ads;
 	public int enemyCont;
 
 	// Use this for initialization
@@ -31,6 +32,7 @@ public class CreatEnemy : MonoBehaviour
 	{
 		
 		enemyList = new List <GameObject>();
+		ads = GetComponent<AdsComponent>();
 		player = playerManager.GetComponent<Player>();
 		InstantiateEnemy();
 		
@@ -110,6 +112,7 @@ public class CreatEnemy : MonoBehaviour
 						enemyList[0].GetComponent<EnemyDeath>().RightPunch();
 						enemyList.RemoveAt(0);
 						repositionEnemy();
+						
 					}
 					else
 					{
