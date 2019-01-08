@@ -8,6 +8,11 @@ public class MenuSystem : MonoBehaviour {
 	GameObject levelSystemPrefab;
 	[SerializeField]
 	GameObject quitMenuPrefab;
+
+	[SerializeField]
+	Transform LevelSelectedManager;
+	[SerializeField]
+	Transform[] targetsPosition;
 	
 	// Use this for initialization
 	void Start () 
@@ -21,6 +26,18 @@ public class MenuSystem : MonoBehaviour {
 		
 	}
 
+	public void ChangLevel(bool side)
+	{
+		if (!side)
+		{
+			LevelSelectedManager.transform.position = Vector2.MoveTowards(LevelSelectedManager.transform.position,targetsPosition[0].position, 200000f * Time.deltaTime);
+		}
+		else
+		{
+			LevelSelectedManager.transform.position = Vector2.MoveTowards(LevelSelectedManager.transform.position,targetsPosition[1].position, 200000f * Time.deltaTime);
+
+		}
+	}
 	public void OpenLevelSystem(bool open)
 	{
 		if(!open)
