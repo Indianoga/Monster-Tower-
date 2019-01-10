@@ -8,7 +8,7 @@ public class CreatEnemy : MonoBehaviour
 {	
 	bool playerSide;
 	public bool isGame = false;
-	public float delayPunchTime;
+	public Text  gold;
 	[SerializeField]
 	GameObject playerManager;
 	Player player;
@@ -45,6 +45,7 @@ public class CreatEnemy : MonoBehaviour
 		enemyList = new List <GameObject>();
 		ads = GetComponent<AdsComponent>();
 		player = playerManager.GetComponent<Player>();
+		enemyCont = PlayerPrefs.GetInt("gold");
 		InstantiateEnemy();
 		
 	}
@@ -52,6 +53,7 @@ public class CreatEnemy : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		PlayerPrefs.GetInt("gold",enemyCont);
 		//pcGame();
 		androidGame();
 	}
@@ -156,6 +158,7 @@ public class CreatEnemy : MonoBehaviour
 				time = 0;
 			}
 		}
+		gold.text = enemyCont.ToString(); 
 	}
 	void TimerCount()
 	{
@@ -246,6 +249,7 @@ public class CreatEnemy : MonoBehaviour
 		
 		gameOverPrefab.SetActive(true);
 		gameOverPanel.SetTrigger("DoFade");
+		PlayerPrefs.SetInt("gold",enemyCont);
 		yield return new WaitForSeconds(1f);
 		LoadingScreenManager.LoadScene(1);
 	}
