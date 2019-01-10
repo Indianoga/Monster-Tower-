@@ -21,6 +21,7 @@ public class StoreManager : MonoBehaviour
 	void Update () 
 	{
 		gold.text = currentGold.ToString();
+		PlayerPrefs.SetInt("gold", currentGold);
 	}
 
 	public void Buy(string item)
@@ -30,6 +31,7 @@ public class StoreManager : MonoBehaviour
 			if(currentGold > itensControls[0].price)
 			{
 				Debug.Log("I can Buy");
+				currentGold = currentGold - itensControls[0].price;
 			}
 			else
 			{
