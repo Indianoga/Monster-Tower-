@@ -125,6 +125,7 @@ public class CreatEnemy : MonoBehaviour
 						enemyList[0].GetComponent<EnemyDeath>().RightPunch();
 						enemyList.RemoveAt(0);
 						repositionEnemy();
+						enemyCont++;
 						
 					}
 					else
@@ -142,13 +143,14 @@ public class CreatEnemy : MonoBehaviour
 						enemyList[0].GetComponent<EnemyDeath>().LeftPunch();
 						enemyList.RemoveAt(0);
 						repositionEnemy();
+						enemyCont++;
 					}
 					else
 					{
 					enemyList[0].GetComponent<EnemyDeath>().enemyLife--;
 					}
 				}
-				enemyCont++;
+				
 				DoDamage();
 			}
 			TimerCount();
