@@ -67,6 +67,7 @@ public class UIManager : MonoBehaviour
 			creatEnemy.isGame = false;
 			pauseBtn.SetActive(false);
 			ContBtn.SetActive(true);
+			menuBtn.SetActive(true);
 		}
 		else
 		{
@@ -74,6 +75,7 @@ public class UIManager : MonoBehaviour
 			creatEnemy.isGame = true;
 			pauseBtn.SetActive(true);
 			ContBtn.SetActive(false);
+			menuBtn.SetActive(false);
 		}
 		
 
