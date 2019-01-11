@@ -34,6 +34,7 @@ public class SceneManagerSystem : MonoBehaviour
 	}
 	public void GoMenu()
 	{
+		Time.timeScale = 1;
 		LoadingScreenManager.LoadScene(0);
 	}
 	public void GoGame()

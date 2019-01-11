@@ -41,7 +41,7 @@ public class UIManager : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-
+	
 	}
 
 	public void StartGame()
@@ -60,7 +60,7 @@ public class UIManager : MonoBehaviour
 
 	public void PauseMenu(bool isPause)
 	{
-
+		
 		if (!isPause)
 		{
 			Time.timeScale = 0;
@@ -68,6 +68,7 @@ public class UIManager : MonoBehaviour
 			pauseBtn.SetActive(false);
 			ContBtn.SetActive(true);
 			menuBtn.SetActive(true);
+			
 		}
 		else
 		{
