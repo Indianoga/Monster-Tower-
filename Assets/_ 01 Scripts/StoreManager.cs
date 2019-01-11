@@ -11,9 +11,8 @@ public class StoreManager : MonoBehaviour
 	int shields;
 	int extraLifes;
 	int powerDestruction;
+	int comboLife;
 
-	[SerializeField]
-	Button[] intensBtns;
 	[SerializeField]
 	public ItensControls[] itensControls;
 
@@ -22,7 +21,7 @@ public class StoreManager : MonoBehaviour
 	{
 		currentGold = PlayerPrefs.GetInt("gold");
 		extraLifes = PlayerPrefs.GetInt("extraLife");
-		//extraLifes = 0;
+		
 	}
 	
 	// Update is called once per frame
@@ -32,7 +31,7 @@ public class StoreManager : MonoBehaviour
 		ItensBtnsCheck();
 		PlayerPrefs.SetInt("gold", currentGold);
 		PlayerPrefs.SetInt("extraLife",extraLifes);
-		Debug.Log(extraLifes);
+		
 	}
 
 	public void Buy(string item)
@@ -65,6 +64,7 @@ public class StoreManager : MonoBehaviour
 			{
 				Debug.Log("I can Buy");
 				currentGold = currentGold - itensControls[2].price;
+				comboLife++;
 			}
 		}
 	
@@ -85,7 +85,11 @@ public class StoreManager : MonoBehaviour
 	{
 		if (extraLifes >= 3)
 		{
-			intensBtns[3].interactable = false;
+			itensControls[2].itenBtns.interactable = false;
+		}
+		if (comboLife >= 1)
+		{
+			itensControls[3].itenBtns.interactable = false;
 		}
 	}
 }
