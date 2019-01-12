@@ -2395,7 +2395,7 @@ MonoBehaviour:
   fireBall: {fileID: 1221772154904882, guid: 1041e5c121c889449a54a3628cf6e4d9, type: 2}
   gameOverPrefab: {fileID: 523830822}
   gameOverPanel: {fileID: 1940630547}
-  enemyCont: 0
+  getGold: 0
 --- !u!4 &1851665433
 Transform:
   m_ObjectHideFlags: 0
@@ -2614,8 +2614,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.7, z: 1}
-  m_Center: {x: -0.04872051, y: 0.54342055, z: 0}
+  m_Size: {x: 0.8, y: 0.70864105, z: 1}
+  m_Center: {x: -0.04872051, y: -0.0052986145, z: 0}
 --- !u!54 &2047051811
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2649,6 +2649,7 @@ MonoBehaviour:
   - {fileID: 1318558283}
   playerPrefab: {fileID: 2047051809}
   playerLife: 3
+  gameManager: {fileID: 1851665431}
 --- !u!1 &2051265069
 GameObject:
   m_ObjectHideFlags: 0

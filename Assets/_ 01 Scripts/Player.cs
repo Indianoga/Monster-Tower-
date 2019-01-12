@@ -17,13 +17,21 @@ public class Player : MonoBehaviour
 
 	[SerializeField]
 	public int playerLife;
+	
+	[SerializeField]
+	GameObject gameManager;
+
+	CreatEnemy creatEnemy;
 	float playerScale;
+
+	
 
 	// Use this for initialization
 	void Start () 
 	{
 		playerScale = transform.localScale.x;
 		playerAnin = GetComponentInChildren<Animator>();
+		creatEnemy = gameManager.GetComponent<CreatEnemy>(); 
 	}
 	
 	// Update is called once per frame
@@ -51,8 +59,7 @@ public class Player : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag("fireBall"))
 		{
-			SceneManager.LoadScene("Game");		}
+			creatEnemy.StartCoroutine("GameOver");			
+		}
 	}
-
-	
 }

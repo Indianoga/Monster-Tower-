@@ -33,7 +33,7 @@ public class CreatEnemy : MonoBehaviour
 	List <GameObject> enemyList;
 	
 	AdsComponent ads;
-	public int enemyCont;
+	public int getGold;
 
 
 
@@ -45,7 +45,7 @@ public class CreatEnemy : MonoBehaviour
 		enemyList = new List <GameObject>();
 		ads = GetComponent<AdsComponent>();
 		player = playerManager.GetComponent<Player>();
-		enemyCont = PlayerPrefs.GetInt("gold");
+		getGold = PlayerPrefs.GetInt("gold");
 		InstantiateEnemy();
 		
 	}
@@ -53,7 +53,7 @@ public class CreatEnemy : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		PlayerPrefs.GetInt("gold",enemyCont);
+		PlayerPrefs.GetInt("gold",getGold);
 		//pcGame();
 		androidGame();
 	}
@@ -99,7 +99,7 @@ public class CreatEnemy : MonoBehaviour
 			
 			}
 		    	
-				enemyCont++;
+				getGold++;
 				TimerCount();
 				if (time >= 1f)
 				{
@@ -125,7 +125,7 @@ public class CreatEnemy : MonoBehaviour
 						enemyList[0].GetComponent<EnemyDeath>().RightPunch();
 						enemyList.RemoveAt(0);
 						repositionEnemy();
-						enemyCont++;
+						RandomGold();
 						
 					}
 					else
@@ -143,7 +143,7 @@ public class CreatEnemy : MonoBehaviour
 						enemyList[0].GetComponent<EnemyDeath>().LeftPunch();
 						enemyList.RemoveAt(0);
 						repositionEnemy();
-						enemyCont++;
+						RandomGold();
 					}
 					else
 					{
@@ -156,15 +156,25 @@ public class CreatEnemy : MonoBehaviour
 			TimerCount();
 			if (time >= 1f)
 			{
-				//FireBallInstatiate();
+				FireBallInstatiate();
 				time = 0;
 			}
 		}
-		gold.text = enemyCont.ToString(); 
+		gold.text = getGold.ToString(); 
 	}
 	void TimerCount()
 	{
 		time += 1 * Time.deltaTime; 
+	}
+
+	void RandomGold()
+	{
+		float index = Random.Range(0f,10f);
+		if (index > 8 )
+		{
+			getGold++;
+		}
+		
 	}
 
 	GameObject RandomEnemy (Vector2 posicao)
@@ -246,13 +256,12 @@ public class CreatEnemy : MonoBehaviour
 		}
 
 	}
-	IEnumerator GameOver()
+	public IEnumerator GameOver()
 	{
-		
 		gameOverPrefab.SetActive(true);
 		gameOverPanel.SetTrigger("DoFade");
-		PlayerPrefs.SetInt("gold",enemyCont);
-		yield return new WaitForSeconds(1f);
+		PlayerPrefs.SetInt("gold",getGold);
+		yield return new WaitForSeconds(1.5f);
 		LoadingScreenManager.LoadScene(1);
 	}
 }
