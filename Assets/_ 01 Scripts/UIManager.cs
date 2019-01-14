@@ -32,9 +32,10 @@ public class UIManager : MonoBehaviour
 		
 		creatEnemy = gameManager.GetComponent<CreatEnemy>();
 		player = playerManager.GetComponent<Player>();
-		for (int i = 0; i < player.playerImagLife.Length; i++)
+		for (int i = 0; i < player.playerLifeManagerControls.Length; i++)
 		{
-			player.playerImagLife[i].SetActive(false);
+			player.playerLifeManagerControls[i].playerImageOn.SetActive(false);
+			player.playerLifeManagerControls[i].playerImageOff.SetActive(false);
 		}
 	}
 	
@@ -51,9 +52,10 @@ public class UIManager : MonoBehaviour
 		goldIcon.SetActive(true);
 		creatEnemy.isGame = true;
 		menuBtn.SetActive(false);
-		for (int i = 0; i < player.playerImagLife.Length; i++)
+		for (int i = 0; i < player.playerLifeManagerControls.Length; i++)
 		{
-			player.playerImagLife[i].SetActive(true);
+			player.playerLifeManagerControls[i].playerImageOn.SetActive(true);
+			player.playerLifeManagerControls[i].playerImageOff.SetActive(true);
 		}
 		
 	}

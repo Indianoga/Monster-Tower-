@@ -29,7 +29,7 @@ public class SoundManager : MonoBehaviour
 	{
 		
 	}
-	public void Play (string channel, AudioClip clip)
+	public void Play (string channel, AudioClip clip, float vol)
 	{
 		AudioSource tempSourcer = null;
 		int index = 0;
@@ -56,6 +56,7 @@ public class SoundManager : MonoBehaviour
 
 		tempSourcer.pitch = pitch;
 		tempSourcer.clip = clip; 
+		tempSourcer.volume = vol;
 		tempSourcer.Play ();
 	}
 

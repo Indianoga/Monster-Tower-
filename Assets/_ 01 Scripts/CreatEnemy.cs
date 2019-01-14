@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class CreatEnemy : MonoBehaviour 
 {	
 	bool playerSide;
+	[HideInInspector]
 	public bool isGame = false;
 	public Text  gold;
 	[SerializeField]
@@ -33,6 +34,8 @@ public class CreatEnemy : MonoBehaviour
 	List <GameObject> enemyList;
 	
 	AdsComponent ads;
+	
+	[HideInInspector]
 	public int getGold;
 
 
@@ -147,7 +150,7 @@ public class CreatEnemy : MonoBehaviour
 					}
 					else
 					{
-					enemyList[0].GetComponent<EnemyDeath>().enemyLife--;
+						enemyList[0].GetComponent<EnemyDeath>().enemyLife--;
 					}
 				}
 				
@@ -156,7 +159,7 @@ public class CreatEnemy : MonoBehaviour
 			TimerCount();
 			if (time >= 1f)
 			{
-				FireBallInstatiate();
+				//FireBallInstatiate();
 				time = 0;
 			}
 		}
@@ -231,24 +234,28 @@ public class CreatEnemy : MonoBehaviour
 		}
 	}
 	
-	void DoDamage()
+	public void DoDamage()
 	{
 		if (enemyList[0].gameObject.CompareTag ("enemy") )
 		{
 			if ((enemyList[0].name == "MonsterEsq(Clone)" && !playerSide) || (enemyList[0].name == "MonsterDir(Clone)" && playerSide))
 			{
 				player.playerLife--;
+				if(player.playerLife <= 3)
+				{
+					player.playerLifeManagerControls[3].playerImageOn.SetActive(false);
+				}
 				if (player.playerLife <= 2)
 				{
-					player.playerImagLife[2].SetActive(false);
+					
 				}
 				if (player.playerLife <= 1)
 				{
-					player.playerImagLife[1].SetActive(false);
+					
 				}
 				if (player.playerLife <= 0)
 				{
-					player.playerImagLife[0].SetActive(false);
+					
 					StartCoroutine("GameOver");
 				}
 				
