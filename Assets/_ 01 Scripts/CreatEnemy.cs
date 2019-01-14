@@ -27,13 +27,17 @@ public class CreatEnemy : MonoBehaviour
 	Animator gameOverPanel;
 
 	float time;
+	float isTime;
 	
 	int enemyLifeManager;
 	int startPosition;
-
+	[HideInInspector]
 	public bool shieldOff;
+	[HideInInspector]
+	public bool doDestruction;
 
-	List <GameObject> enemyList;
+	[HideInInspector]
+	public List <GameObject> enemyList;
 	
 	AdsComponent ads;
 	
@@ -55,6 +59,7 @@ public class CreatEnemy : MonoBehaviour
 		getGold = PlayerPrefs.GetInt("gold");
 		InstantiateEnemy();
 		
+		
 	}
 	
 	// Update is called once per frame
@@ -64,8 +69,6 @@ public class CreatEnemy : MonoBehaviour
 		//pcGame();
 		androidGame();
 	}
-
-	
 	void pcGame()
 	{
 		if (isGame)
@@ -105,8 +108,7 @@ public class CreatEnemy : MonoBehaviour
 				PlayerDamaged();
 			
 			}
-		    	
-				getGold++;
+		    	getGold++;
 				TimerCount();
 				if (time >= 1f)
 				{
@@ -115,7 +117,6 @@ public class CreatEnemy : MonoBehaviour
 				}
 		}
 	}
-
 	void androidGame()
 	{
 		if (isGame)
@@ -127,7 +128,15 @@ public class CreatEnemy : MonoBehaviour
 				{
 					player.Right();
 					playerSide = true;
-					if (enemyList[0].GetComponent<EnemyDeath>().enemyLife <= 0)
+					if (doDestruction)
+					{
+						enemyList[0].GetComponent<EnemyDeath>().RightPunch();
+						enemyList.RemoveAt(0);
+						repositionEnemy();
+						RandomGold();
+						PlayerLifeSteal();	
+					}
+					else if (enemyList[0].GetComponent<EnemyDeath>().enemyLife <= 0)
 					{	
 						enemyList[0].GetComponent<EnemyDeath>().RightPunch();
 						enemyList.RemoveAt(0);
@@ -137,7 +146,7 @@ public class CreatEnemy : MonoBehaviour
 					}
 					else
 					{
-					enemyList[0].GetComponent<EnemyDeath>().enemyLife--;
+						enemyList[0].GetComponent<EnemyDeath>().enemyLife--;
 					}
 				}
 			
@@ -145,7 +154,15 @@ public class CreatEnemy : MonoBehaviour
 				{
 					player.Left();
 					playerSide = false;
-					if (enemyList[0].GetComponent<EnemyDeath>().enemyLife <= 0)
+					if(doDestruction)
+					{
+						enemyList[0].GetComponent<EnemyDeath>().LeftPunch();
+						enemyList.RemoveAt(0);
+						repositionEnemy();
+						RandomGold();
+						PlayerLifeSteal();
+					}
+					else if (enemyList[0].GetComponent<EnemyDeath>().enemyLife <= 0)
 					{
 						enemyList[0].GetComponent<EnemyDeath>().LeftPunch();
 						enemyList.RemoveAt(0);
@@ -168,11 +185,22 @@ public class CreatEnemy : MonoBehaviour
 				//FireBallInstatiate();
 				time = 0;
 			}
+			if (doDestruction)
+			{
+				if (isTime >= 3f)
+				{
+					doDestruction = false;
+					player.powerDestructionPlayer--;
+				}
+
+				Debug.Log(isTime);
+			}
+			
 		}
+		
 		gold.text = getGold.ToString(); 
 		
 	}
-
 	void PlayerLifeSteal()
 	{
 		if(player.comboLifePlayer >= 1)
@@ -219,8 +247,8 @@ public class CreatEnemy : MonoBehaviour
 	void TimerCount()
 	{
 		time += 1 * Time.deltaTime; 
+		isTime += 1 * Time.deltaTime;
 	}
-
 	void RandomGold()
 	{
 		float index = Random.Range(0f,10f);
@@ -230,7 +258,6 @@ public class CreatEnemy : MonoBehaviour
 		}
 		
 	}
-
 	GameObject RandomEnemy (Vector2 posicao)
 	{
 		int index = Random.Range(0,enemyLifePrefabControl.Length);
@@ -247,32 +274,22 @@ public class CreatEnemy : MonoBehaviour
 		
 		newEnemy.transform.position = posicao;
 		return newEnemy;
-
 	}
-
-
 	void FireBallInstatiate()
 	{
 		int index = Random.Range(0, FireBallSpawner.Length);
 		GameObject newFireBall = Instantiate (fireBall, FireBallSpawner[index].position, FireBallSpawner[index].rotation);
 		
 	}
-
 	void InstantiateEnemy()
-	{
-		
+	{	
 		for (int i = 0; i <= 8; i++ )
 		{
-
 			GameObject enemyPrefabsInstantiats = RandomEnemy (new Vector2 (0.05f,-3.06f + (i * 0.99f)));
-			enemyList.Add (enemyPrefabsInstantiats);
-			 
+			enemyList.Add (enemyPrefabsInstantiats);	 
 		}
-		
-		
+	
 	}
-
-
 	void repositionEnemy()
 	{
 
@@ -284,7 +301,6 @@ public class CreatEnemy : MonoBehaviour
 			enemyList [i].transform.position = new Vector2 (enemyList[i].transform.position.x, enemyList[i].transform.position.y - 0.99f);
 		}
 	}
-	
 	public void PlayerDamaged()
 	{
 		if (enemyList[0].gameObject.CompareTag ("enemy") )

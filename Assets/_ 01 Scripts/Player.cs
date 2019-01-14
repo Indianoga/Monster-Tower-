@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
 		ItensLoading();
 		ExtraLifeControl ();
 		ShieldControl();
+		PowerDestructionControl();
 	}
 
 	void ItensLoading()
@@ -58,7 +59,7 @@ public class Player : MonoBehaviour
 	void Update ()
 	{
 		SaveItens();
-		Debug.Log("Shields: " + shieldsPlayer);
+		Debug.Log("PowerDestruction: " + powerDestructionPlayer);
 	}
 	void SaveItens()
 	{
@@ -159,10 +160,21 @@ public class Player : MonoBehaviour
 		{
 			creatEnemy.shieldOff = true;
 		}
-		Debug.Log(creatEnemy.shieldOff);
+		
 		
 	}
-
+	void PowerDestructionControl()
+	{
+		if(powerDestructionPlayer > 0)
+		{
+			creatEnemy.doDestruction = true;
+		}
+		else 
+		{
+			creatEnemy.doDestruction = false;
+		}
+		Debug.Log("Destruction power: " + creatEnemy.doDestruction);
+	}
 	public void Right()
 	{
 		playerPrefab.transform.position = new Vector3(0.99f, playerPrefab.transform.position.y, 0);

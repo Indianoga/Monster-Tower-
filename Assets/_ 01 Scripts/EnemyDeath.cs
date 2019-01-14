@@ -6,9 +6,16 @@ public class EnemyDeath : MonoBehaviour {
 
 	public int enemyLife;
 	
-	public void LeftPunch()
+	private void Start() 
 	{
 		
+	}
+	void Update() 
+	{
+		
+	}
+	public void LeftPunch()
+	{
 		GetComponent <Rigidbody> ().velocity = new Vector2 (10, 0);
 		GetComponent <Rigidbody> ().isKinematic = false;
 		GetComponent <Rigidbody> ().AddTorque(new Vector3 (0,0,-1) * 100 * 100);

@@ -1990,7 +1990,7 @@ MonoBehaviour:
     itenPrefab: {fileID: 0}
     itenBtns: {fileID: 476487090}
   - itenName: Power Destroy
-    price: 30
+    price: 1
     itenPrefab: {fileID: 0}
     itenBtns: {fileID: 94992948}
   - itenName: Extra Life
