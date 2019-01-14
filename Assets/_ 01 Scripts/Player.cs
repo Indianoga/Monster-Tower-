@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
 		playerAnin = GetComponentInChildren<Animator>();
 		creatEnemy = gameManager.GetComponent<CreatEnemy>(); 
 		ItensLoading();
+		ExtraLifeControl ();
 	}
 
 	void ItensLoading()
@@ -55,15 +56,89 @@ public class Player : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		ExtraLifeControl ();
+		
 	}
 
 	public void ExtraLifeControl ()
 	{
 		
 		if (extraLifePlayer == 0)
+			{
+				playerLife = 1;
+				for (int i = 0; i < playerLifeManagerControls.Length; i++)
+				{
+					if (playerLife == i)
+					{
+						if (i == 1)
+						{
+							playerLifeManagerControls[0].playerImageOn.SetActive(true);
+							playerLifeManagerControls[0].playerImageOff.SetActive(true);
+						}
+						else
+						{
+							playerLifeManagerControls[i].playerImageOn.SetActive(false);
+							playerLifeManagerControls[i].playerImageOff.SetActive(false);
+						}
+					}
+				
+				}
+			}
+		if (extraLifePlayer == 1)
 		{
-			playerLife = 1;
+			playerLife = 2;
+				for (int i = 0; i < playerLifeManagerControls.Length; i++)
+				{
+					if (playerLife == i)
+					{
+						if (i == 2)
+						{
+							playerLifeManagerControls[0].playerImageOn.SetActive(true);
+							playerLifeManagerControls[0].playerImageOff.SetActive(true);
+							playerLifeManagerControls[1].playerImageOn.SetActive(true);
+							playerLifeManagerControls[1].playerImageOff.SetActive(true);
+						}
+						else
+						{
+							playerLifeManagerControls[i].playerImageOn.SetActive(false);
+							playerLifeManagerControls[i].playerImageOff.SetActive(false);
+						}
+					}
+				
+				}
+		}
+		if (extraLifePlayer == 2)
+		{
+			playerLife = 3;
+				for (int i = 0; i < playerLifeManagerControls.Length; i++)
+				{
+					if (playerLife == i)
+					{
+						if (i == 3)
+						{
+							playerLifeManagerControls[0].playerImageOn.SetActive(true);
+							playerLifeManagerControls[0].playerImageOff.SetActive(true);
+							playerLifeManagerControls[1].playerImageOn.SetActive(true);
+							playerLifeManagerControls[1].playerImageOff.SetActive(true);
+							playerLifeManagerControls[2].playerImageOn.SetActive(true);
+							playerLifeManagerControls[2].playerImageOff.SetActive(true);
+						}
+						else
+						{
+							playerLifeManagerControls[i].playerImageOn.SetActive(false);
+							playerLifeManagerControls[i].playerImageOff.SetActive(false);
+						}
+					}
+				
+				}
+		}
+		if (extraLifePlayer == 3)
+		{
+				playerLife = 4;
+				for (int i = 0; i < playerLifeManagerControls.Length; i++)
+				{
+					playerLifeManagerControls[i].playerImageOn.SetActive(true);
+					playerLifeManagerControls[i].playerImageOff.SetActive(true);
+				}
 		}
 	}
 

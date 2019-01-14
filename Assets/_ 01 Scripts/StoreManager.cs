@@ -76,27 +76,28 @@ public class StoreManager : MonoBehaviour
 				powerDestruction++;
 			}
 		}
-
-		if (item == "ComboLife")
+		if (item == "ExtraLife")
 		{
 			if(currentGold >= itensControls[2].price)
 			{
 				
 				currentGold -= itensControls[2].price;
-				comboLife++;
-			}
-		}
-	
-		if (item == "ExtraLife")
-		{
-			if(currentGold >= itensControls[3].price && extraLifes < 3)
-			{
-				
-				currentGold -= itensControls[3].price;
 				extraLifes++;
 				
 			}
 		}
+
+		if (item == "ComboLife")
+		{
+			if(currentGold >= itensControls[3].price)
+			{
+				
+				currentGold -= itensControls[3].price;
+				comboLife++;
+			}
+		}
+	
+		
 		
 	}
 

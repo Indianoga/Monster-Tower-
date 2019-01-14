@@ -247,15 +247,15 @@ public class CreatEnemy : MonoBehaviour
 				}
 				if (player.playerLife <= 2)
 				{
-					
+					player.playerLifeManagerControls[2].playerImageOn.SetActive(false);
 				}
 				if (player.playerLife <= 1)
 				{
-					
+					player.playerLifeManagerControls[1].playerImageOn.SetActive(false);
 				}
 				if (player.playerLife <= 0)
 				{
-					
+					player.playerLifeManagerControls[0].playerImageOn.SetActive(false);
 					StartCoroutine("GameOver");
 				}
 				
