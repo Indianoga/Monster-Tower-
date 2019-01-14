@@ -31,12 +31,16 @@ public class CreatEnemy : MonoBehaviour
 	int enemyLifeManager;
 	int startPosition;
 
+	public bool shieldOff;
+
 	List <GameObject> enemyList;
 	
 	AdsComponent ads;
 	
 	[HideInInspector]
 	public int getGold;
+	[HideInInspector]
+	public int playerComboLifeSteal;
 
 
 
@@ -81,7 +85,7 @@ public class CreatEnemy : MonoBehaviour
 					{
 						enemyList[0].GetComponent<EnemyDeath>().enemyLife--;
 					}
-					DoDamage();
+					PlayerDamaged();
 			}
 			
 			if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -98,7 +102,7 @@ public class CreatEnemy : MonoBehaviour
 				{
 					enemyList[0].GetComponent<EnemyDeath>().enemyLife--;
 				}
-				DoDamage();
+				PlayerDamaged();
 			
 			}
 		    	
@@ -129,7 +133,7 @@ public class CreatEnemy : MonoBehaviour
 						enemyList.RemoveAt(0);
 						repositionEnemy();
 						RandomGold();
-						
+						PlayerLifeSteal();						
 					}
 					else
 					{
@@ -147,6 +151,8 @@ public class CreatEnemy : MonoBehaviour
 						enemyList.RemoveAt(0);
 						repositionEnemy();
 						RandomGold();
+						PlayerLifeSteal();
+						
 					}
 					else
 					{
@@ -154,7 +160,7 @@ public class CreatEnemy : MonoBehaviour
 					}
 				}
 				
-				DoDamage();
+				PlayerDamaged();
 			}
 			TimerCount();
 			if (time >= 1f)
@@ -164,7 +170,52 @@ public class CreatEnemy : MonoBehaviour
 			}
 		}
 		gold.text = getGold.ToString(); 
+		
 	}
+
+	void PlayerLifeSteal()
+	{
+		if(player.comboLifePlayer >= 1)
+		{
+				if(player.playerLife == 1 && player.extraLifePlayer == 1)
+				{
+					playerComboLifeSteal++;
+				}
+				else if(player.playerLife == 2 && player.extraLifePlayer == 2)
+				{
+					playerComboLifeSteal++;
+				}
+				else if(player.playerLife == 3 && player.extraLifePlayer == 3)
+				{
+					playerComboLifeSteal++;
+				}
+			
+			if(playerComboLifeSteal >= 10)				
+			{
+				if(player.playerLife == 1 && player.extraLifePlayer == 1)
+				{
+					player.playerLife = 2;
+					player.playerLifeManagerControls[1].playerImageOn.SetActive(true);
+					playerComboLifeSteal = 0;
+				}
+				else if(player.playerLife == 2 && player.extraLifePlayer == 2)
+				{
+					player.playerLife = 3;
+					player.playerLifeManagerControls[2].playerImageOn.SetActive(true);
+					playerComboLifeSteal = 0;
+				}
+				else if(player.playerLife == 3 && player.extraLifePlayer == 3)
+				{
+					player.playerLife = 4;
+					player.playerLifeManagerControls[3].playerImageOn.SetActive(true);
+					playerComboLifeSteal = 0;
+				}
+				
+			} 
+		}
+		
+	}
+	
 	void TimerCount()
 	{
 		time += 1 * Time.deltaTime; 
@@ -234,34 +285,47 @@ public class CreatEnemy : MonoBehaviour
 		}
 	}
 	
-	public void DoDamage()
+	public void PlayerDamaged()
 	{
 		if (enemyList[0].gameObject.CompareTag ("enemy") )
 		{
 			if ((enemyList[0].name == "MonsterEsq(Clone)" && !playerSide) || (enemyList[0].name == "MonsterDir(Clone)" && playerSide))
 			{
-				player.playerLife--;
-				if(player.playerLife <= 3)
+				if (shieldOff == true)
 				{
-					player.playerLifeManagerControls[3].playerImageOn.SetActive(false);
+					DamageControl();
 				}
-				if (player.playerLife <= 2)
+				else 
 				{
-					player.playerLifeManagerControls[2].playerImageOn.SetActive(false);
-				}
-				if (player.playerLife <= 1)
-				{
-					player.playerLifeManagerControls[1].playerImageOn.SetActive(false);
-				}
-				if (player.playerLife <= 0)
-				{
-					player.playerLifeManagerControls[0].playerImageOn.SetActive(false);
-					StartCoroutine("GameOver");
+					shieldOff = true;
+					player.shieldsPlayer--;
 				}
 				
 			}
 		}
-
+	}
+	public void DamageControl()
+	{
+		
+		player.playerLife--;
+		if(player.playerLife <= 3)
+		{
+			player.playerLifeManagerControls[3].playerImageOn.SetActive(false);
+		}
+		if (player.playerLife <= 2)
+		{
+			player.playerLifeManagerControls[2].playerImageOn.SetActive(false);
+		}
+		if (player.playerLife <= 1)
+		{
+			player.playerLifeManagerControls[1].playerImageOn.SetActive(false);
+		}
+		if (player.playerLife <= 0)
+		{
+			player.playerLifeManagerControls[0].playerImageOn.SetActive(false);
+			StartCoroutine("GameOver");
+		}
+		
 	}
 	public IEnumerator GameOver()
 	{

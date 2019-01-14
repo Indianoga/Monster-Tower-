@@ -1998,7 +1998,7 @@ MonoBehaviour:
     itenPrefab: {fileID: 0}
     itenBtns: {fileID: 2062048585}
   - itenName: Combo Life
-    price: 100
+    price: 5
     itenPrefab: {fileID: 0}
     itenBtns: {fileID: 1082938136}
 --- !u!1 &2062048583

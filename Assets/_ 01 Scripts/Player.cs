@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
 		creatEnemy = gameManager.GetComponent<CreatEnemy>(); 
 		ItensLoading();
 		ExtraLifeControl ();
+		ShieldControl();
 	}
 
 	void ItensLoading()
@@ -51,12 +52,14 @@ public class Player : MonoBehaviour
 		extraLifePlayer = PlayerPrefs.GetInt("extraLife");
 		powerDestructionPlayer = PlayerPrefs.GetInt("powerDestruction");
 		comboLifePlayer = PlayerPrefs.GetInt("comboLife");
+
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
 		
+		Debug.Log("Shields: " + shieldsPlayer);
 	}
 
 	public void ExtraLifeControl ()
@@ -142,6 +145,16 @@ public class Player : MonoBehaviour
 		}
 	}
 
+	void ShieldControl()
+	{
+		if (shieldsPlayer > 0)
+		{
+			creatEnemy.shieldOff = false;
+		}
+		Debug.Log(creatEnemy.shieldOff);
+		
+	}
+
 	public void Right()
 	{
 		playerPrefab.transform.position = new Vector3(0.99f, playerPrefab.transform.position.y, 0);
@@ -161,7 +174,7 @@ public class Player : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag("fireBall"))
 		{
-			creatEnemy.StartCoroutine("GameOver");			
+			creatEnemy.DamageControl();			
 		}
 	}
 }
