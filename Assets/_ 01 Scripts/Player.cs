@@ -49,19 +49,23 @@ public class Player : MonoBehaviour
 	void ItensLoading()
 	{
 		shieldsPlayer = PlayerPrefs.GetInt("shields");
-		extraLifePlayer = PlayerPrefs.GetInt("extraLife");
 		powerDestructionPlayer = PlayerPrefs.GetInt("powerDestruction");
+		extraLifePlayer = PlayerPrefs.GetInt("extraLife");
 		comboLifePlayer = PlayerPrefs.GetInt("comboLife");
-
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		
+		SaveItens();
 		Debug.Log("Shields: " + shieldsPlayer);
 	}
+	void SaveItens()
+	{
+		PlayerPrefs.SetInt("shields", shieldsPlayer);
+		PlayerPrefs.SetInt("powerDestruction",powerDestructionPlayer);
 
+	}
 	public void ExtraLifeControl ()
 	{
 		
@@ -150,6 +154,10 @@ public class Player : MonoBehaviour
 		if (shieldsPlayer > 0)
 		{
 			creatEnemy.shieldOff = false;
+		}
+		else 
+		{
+			creatEnemy.shieldOff = true;
 		}
 		Debug.Log(creatEnemy.shieldOff);
 		
