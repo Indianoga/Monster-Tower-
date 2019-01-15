@@ -194,7 +194,16 @@ public class Player : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag("fireBall"))
 		{
-			DamageControl();			
+			if(creatEnemy.shieldOff == true)
+			{
+				DamageControl();	
+			}
+			else
+			{
+				creatEnemy.shieldOff = true;
+				shieldsPlayer--;
+			}
+					
 		}
 	}
 	public void DamageControl()

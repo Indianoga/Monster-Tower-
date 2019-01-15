@@ -20,6 +20,13 @@ public class CreatEnemy : MonoBehaviour
 	[SerializeField]
 	GameObject fireBall;
 
+	[SerializeField]
+	Transform[] spikeSpawners;
+	[SerializeField]
+	GameObject spike;
+
+	
+
 	[Header ("Game Over System")]
 	[SerializeField]
 	GameObject gameOverPrefab;
@@ -30,12 +37,14 @@ public class CreatEnemy : MonoBehaviour
 	float bestTime;
 	float monsterTime;
 	float fireBallTime;
+	float spikeTime;
 	float powerDestructionTime;
 	int enemyCount;
 	[HideInInspector]
 	public bool shieldOff;
 	[HideInInspector]
 	public bool doDestruction;
+	bool level2 = false;
 
 	[HideInInspector]
 	public List <GameObject> enemyList;
@@ -192,11 +201,7 @@ public class CreatEnemy : MonoBehaviour
 			}
 			TimerCount();
 			//Timer Manager System:
-			if (fireBallTime >= 1f)
-			{
-				//FireBallInstatiate();
-				fireBallTime = 0;
-			}
+			GameLevelManager();
 			if (doDestruction)
 			{
 				if (powerDestructionTime >= 3f)
@@ -213,8 +218,46 @@ public class CreatEnemy : MonoBehaviour
 			
 		}
 		gold.text = getGold.ToString(); 
+		//save enemy number:
 		PlayerPrefs.SetInt("enemyNumber",enemyCount);
+		Debug.Log(bestTime);
+	}
+
+	void GameLevelManager()
+	{
+		if(bestTime > 30f && level2 == false)
+		{
+
+			if (fireBallTime >= 1f)
+			{
+				FireBallInstatiate();
+				fireBallTime = 0;
+			}
+		} 
+		if(bestTime > 60f)
+		{
+			level2 = true;
+			if(spikeTime > 1f)
+			{
+				SpikeInstantiate();
+				spikeTime = 0;
+			}
 			
+		} 
+		if (bestTime > 90)
+		{
+
+			if (fireBallTime >= 1f)
+			{
+				FireBallInstatiate();
+				fireBallTime = 0;
+			}
+			if(spikeTime > 1f)
+			{
+				SpikeInstantiate();
+				spikeTime = 0;
+			}
+		}
 	}
 	void PlayerLifeSteal()
 	{
@@ -270,6 +313,7 @@ public class CreatEnemy : MonoBehaviour
 		}
 		monsterTime += 1 * Time.deltaTime;
 		fireBallTime += 1 * Time.deltaTime; 
+		spikeTime += 1 * Time.deltaTime;
 		powerDestructionTime += 1 * Time.deltaTime;
 	}
 	void RandomGold()
@@ -302,7 +346,11 @@ public class CreatEnemy : MonoBehaviour
 	{
 		int index = Random.Range(0, FireBallSpawner.Length);
 		GameObject newFireBall = Instantiate (fireBall, FireBallSpawner[index].position, FireBallSpawner[index].rotation);
-		
+	}
+	void SpikeInstantiate()
+	{
+		int index = Random.Range(0, spikeSpawners.Length);
+		GameObject newSpike = Instantiate(spike,spikeSpawners[index].position, spikeSpawners[index].rotation)as GameObject;
 	}
 	void InstantiateEnemy()
 	{	
