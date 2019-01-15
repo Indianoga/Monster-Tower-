@@ -173,7 +173,7 @@ public class Player : MonoBehaviour
 		{
 			creatEnemy.doDestruction = false;
 		}
-		Debug.Log("Destruction power: " + creatEnemy.doDestruction);
+	
 	}
 	public void Right()
 	{

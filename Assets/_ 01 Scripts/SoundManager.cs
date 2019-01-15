@@ -93,5 +93,16 @@ public class SoundManager : MonoBehaviour
 public class ClipList
 {
 	public AudioClip   punchMaleEffect;
+	public AudioClip   playerDamaged;
+	public AudioClip   playerDamaged1;
+	public AudioClip   playerDeath;
+	public AudioClip   playerDeath1;
+	public AudioClip   boneBreak;
+	public AudioClip   boneBreak1;
+	public AudioClip   boneBreak2;
+	public AudioClip   monsterScream;
+	
+
+
 	
 }

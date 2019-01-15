@@ -382,8 +382,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipList:
-    GameMusic: {fileID: 8300000, guid: 712bbe958b7714c408760b0fc8af3190, type: 3}
     punchMaleEffect: {fileID: 8300000, guid: cb98ad9164a75824084089c51ba73845, type: 3}
+    playerDamaged: {fileID: 8300000, guid: 812d6b0bf13e48d4988f98ff2619be6e, type: 3}
+    playerDamaged1: {fileID: 8300000, guid: 52a765f769167774d80506db332ed8d8, type: 3}
+    playerDeath: {fileID: 8300000, guid: fb3bfe2b5d7e8b642a1dbe793eb9ff89, type: 3}
+    playerDeath1: {fileID: 8300000, guid: e1bda09ef502c214ea571430dc775077, type: 3}
+    boneBreak: {fileID: 8300000, guid: 4b8209a6908a7744e9456eabebf1ff3e, type: 3}
+    boneBreak1: {fileID: 8300000, guid: 30453578fbf38ea40bbe631b17fce3af, type: 3}
+    boneBreak2: {fileID: 8300000, guid: 5639fdbd7dcafe84eba470a323cf7ea5, type: 3}
+    monsterScream: {fileID: 8300000, guid: 897e347b638bba04798bef7960acfa10, type: 3}
   playerSource:
   - {fileID: 82886269024424272}
   - {fileID: 82522816015628516}
