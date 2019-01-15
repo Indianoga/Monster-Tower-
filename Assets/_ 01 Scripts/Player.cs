@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
 	void Update ()
 	{
 		SaveItens();
-		Debug.Log("PowerDestruction: " + powerDestructionPlayer);
+	
 	}
 	void SaveItens()
 	{
@@ -194,8 +194,36 @@ public class Player : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag("fireBall"))
 		{
-			creatEnemy.DamageControl();			
+			DamageControl();			
 		}
+	}
+	public void DamageControl()
+	{
+		
+		playerLife--;
+		
+		if(playerLife == 3)
+		{
+			playerLifeManagerControls[3].playerImageOn.SetActive(false);
+			SoundManager.instance.Play("Player",SoundManager.instance.clipList.playerDamaged1,0.5f);
+		}
+	    if (playerLife == 2)
+		{
+			playerLifeManagerControls[2].playerImageOn.SetActive(false);
+			SoundManager.instance.Play("Player",SoundManager.instance.clipList.playerDamaged1,0.5f);
+		}
+	    if (playerLife == 1)
+		{
+			playerLifeManagerControls[1].playerImageOn.SetActive(false);
+			SoundManager.instance.Play("Player",SoundManager.instance.clipList.playerDamaged1,0.5f);
+		}
+		if (playerLife == 0)
+		{
+			playerLifeManagerControls[0].playerImageOn.SetActive(false);
+			SoundManager.instance.Play("Player",SoundManager.instance.clipList.playerDeath1,0.5f);
+			creatEnemy.StartCoroutine("GameOver");
+		}
+		
 	}
 }
 

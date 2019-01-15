@@ -26,8 +26,10 @@ public class CreatEnemy : MonoBehaviour
 	[SerializeField]
 	Animator gameOverPanel;
 
-	float time;
-	float isTime;
+	float gameTime;
+	float monsterTime;
+	float fireBallTime;
+	float powerDestructionTime;
 	
 	int enemyLifeManager;
 	int startPosition;
@@ -110,10 +112,10 @@ public class CreatEnemy : MonoBehaviour
 			}
 		    	getGold++;
 				TimerCount();
-				if (time >= 1f)
+				if (fireBallTime >= 1f)
 				{
 					//FireBallInstatiate();
-					time = 0;
+					fireBallTime = 0;
 				}
 		}
 	}
@@ -180,24 +182,28 @@ public class CreatEnemy : MonoBehaviour
 				PlayerDamaged();
 			}
 			TimerCount();
-			if (time >= 1f)
+			//Timer Manager System:
+			if (fireBallTime >= 1f)
 			{
 				//FireBallInstatiate();
-				time = 0;
+				fireBallTime = 0;
 			}
 			if (doDestruction)
 			{
-				if (isTime >= 3f)
+				if (powerDestructionTime >= 3f)
 				{
 					doDestruction = false;
 					player.powerDestructionPlayer--;
 				}
+			}
 
-				Debug.Log(isTime);
+			if(monsterTime > 30f)
+			{
+				SoundManager.instance.Play("Player",SoundManager.instance.clipList.monsterScream,1f);
+				monsterTime = 0;
 			}
 			
 		}
-		
 		gold.text = getGold.ToString(); 
 		
 	}
@@ -246,8 +252,10 @@ public class CreatEnemy : MonoBehaviour
 	
 	void TimerCount()
 	{
-		time += 1 * Time.deltaTime; 
-		isTime += 1 * Time.deltaTime;
+		gameTime += 1 * Time.deltaTime;
+		monsterTime += 1 * Time.deltaTime;
+		fireBallTime += 1 * Time.deltaTime; 
+		powerDestructionTime += 1 * Time.deltaTime;
 	}
 	void RandomGold()
 	{
@@ -309,7 +317,8 @@ public class CreatEnemy : MonoBehaviour
 			{
 				if (shieldOff == true)
 				{
-					DamageControl();
+					player.DamageControl();
+					
 				}
 				else 
 				{
@@ -320,31 +329,10 @@ public class CreatEnemy : MonoBehaviour
 			}
 		}
 	}
-	public void DamageControl()
-	{
-		
-		player.playerLife--;
-		if(player.playerLife <= 3)
-		{
-			player.playerLifeManagerControls[3].playerImageOn.SetActive(false);
-		}
-		if (player.playerLife <= 2)
-		{
-			player.playerLifeManagerControls[2].playerImageOn.SetActive(false);
-		}
-		if (player.playerLife <= 1)
-		{
-			player.playerLifeManagerControls[1].playerImageOn.SetActive(false);
-		}
-		if (player.playerLife <= 0)
-		{
-			player.playerLifeManagerControls[0].playerImageOn.SetActive(false);
-			StartCoroutine("GameOver");
-		}
-		
-	}
+	
 	public IEnumerator GameOver()
 	{
+		isGame = false;
 		gameOverPrefab.SetActive(true);
 		gameOverPanel.SetTrigger("DoFade");
 		PlayerPrefs.SetInt("gold",getGold);
