@@ -2137,7 +2137,7 @@ MonoBehaviour:
   gold: {fileID: 1362346821}
   itensControls:
   - itenName: Shield
-    price: 10
+    price: 1
     itenPrefab: {fileID: 0}
     itenBtns: {fileID: 476487090}
   - itenName: Power Destroy

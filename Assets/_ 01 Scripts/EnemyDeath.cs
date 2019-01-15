@@ -6,6 +6,7 @@ public class EnemyDeath : MonoBehaviour {
 
 	public int enemyLife;
 	
+	
 	private void Start() 
 	{
 		

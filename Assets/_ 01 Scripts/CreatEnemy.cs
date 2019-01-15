@@ -27,12 +27,11 @@ public class CreatEnemy : MonoBehaviour
 	Animator gameOverPanel;
 
 	float gameTime;
+	float bestTime;
 	float monsterTime;
 	float fireBallTime;
 	float powerDestructionTime;
-	
-	int enemyLifeManager;
-	int startPosition;
+	int enemyCount;
 	[HideInInspector]
 	public bool shieldOff;
 	[HideInInspector]
@@ -59,6 +58,8 @@ public class CreatEnemy : MonoBehaviour
 		ads = GetComponent<AdsComponent>();
 		player = playerManager.GetComponent<Player>();
 		getGold = PlayerPrefs.GetInt("gold");
+		gameTime = PlayerPrefs.GetFloat("timePlayed");
+		enemyCount = PlayerPrefs.GetInt("enemyNumber");
 		InstantiateEnemy();
 		
 		
@@ -132,19 +133,23 @@ public class CreatEnemy : MonoBehaviour
 					playerSide = true;
 					if (doDestruction)
 					{
+						enemyCount++;	
+						enemyList[0].GetComponent<EnemyDeath>().RightPunch();
+						enemyList.RemoveAt(0);
+						repositionEnemy();
+						RandomGold();
+						PlayerLifeSteal();
+						
+					}
+					else if (enemyList[0].GetComponent<EnemyDeath>().enemyLife <= 0)
+					{	
+						enemyCount++;	
 						enemyList[0].GetComponent<EnemyDeath>().RightPunch();
 						enemyList.RemoveAt(0);
 						repositionEnemy();
 						RandomGold();
 						PlayerLifeSteal();	
-					}
-					else if (enemyList[0].GetComponent<EnemyDeath>().enemyLife <= 0)
-					{	
-						enemyList[0].GetComponent<EnemyDeath>().RightPunch();
-						enemyList.RemoveAt(0);
-						repositionEnemy();
-						RandomGold();
-						PlayerLifeSteal();						
+											
 					}
 					else
 					{
@@ -158,19 +163,23 @@ public class CreatEnemy : MonoBehaviour
 					playerSide = false;
 					if(doDestruction)
 					{
+						enemyCount++;	
 						enemyList[0].GetComponent<EnemyDeath>().LeftPunch();
 						enemyList.RemoveAt(0);
 						repositionEnemy();
 						RandomGold();
 						PlayerLifeSteal();
+						
 					}
 					else if (enemyList[0].GetComponent<EnemyDeath>().enemyLife <= 0)
 					{
+						enemyCount++;	
 						enemyList[0].GetComponent<EnemyDeath>().LeftPunch();
 						enemyList.RemoveAt(0);
 						repositionEnemy();
 						RandomGold();
 						PlayerLifeSteal();
+						
 						
 					}
 					else
@@ -196,7 +205,6 @@ public class CreatEnemy : MonoBehaviour
 					player.powerDestructionPlayer--;
 				}
 			}
-
 			if(monsterTime > 30f)
 			{
 				SoundManager.instance.Play("Player",SoundManager.instance.clipList.monsterScream,1f);
@@ -205,7 +213,8 @@ public class CreatEnemy : MonoBehaviour
 			
 		}
 		gold.text = getGold.ToString(); 
-		
+		PlayerPrefs.SetInt("enemyNumber",enemyCount);
+			
 	}
 	void PlayerLifeSteal()
 	{
@@ -253,6 +262,12 @@ public class CreatEnemy : MonoBehaviour
 	void TimerCount()
 	{
 		gameTime += 1 * Time.deltaTime;
+		PlayerPrefs.SetFloat("timePlayed",gameTime);
+		bestTime += 1 * Time.deltaTime;
+		if(bestTime > PlayerPrefs.GetFloat("bestTimePlayed"))
+		{
+			PlayerPrefs.SetFloat("bestTimePlayed",bestTime);
+		}
 		monsterTime += 1 * Time.deltaTime;
 		fireBallTime += 1 * Time.deltaTime; 
 		powerDestructionTime += 1 * Time.deltaTime;

@@ -10,8 +10,10 @@ public class StoreManager : MonoBehaviour
 	Text gold;
 	int currentGold;
 	int shields;
+	int shieldsBought;
 	int extraLifes;
 	int powerDestruction;
+	int powerBought;
 	int comboLife;
 
 	[SerializeField]
@@ -24,8 +26,10 @@ public class StoreManager : MonoBehaviour
 		currentGold = PlayerPrefs.GetInt("gold");
 		//currentGold = 30000;
 		shields = PlayerPrefs.GetInt("shields");
+		shieldsBought = PlayerPrefs.GetInt("shieldsBought");
 		extraLifes = PlayerPrefs.GetInt("extraLife");
 		powerDestruction = PlayerPrefs.GetInt("powerDestruction");
+		powerBought = PlayerPrefs.GetInt("powerBought");
 		comboLife = PlayerPrefs.GetInt("comboLife");
 		//System Control :
 		//shields = 0;
@@ -49,8 +53,10 @@ public class StoreManager : MonoBehaviour
 	{
 		PlayerPrefs.SetInt("gold", currentGold);
 		PlayerPrefs.SetInt("shields",shields);
+		PlayerPrefs.SetInt("shieldsBought",shieldsBought);
 		PlayerPrefs.SetInt("extraLife",extraLifes);
 		PlayerPrefs.SetInt("powerDestruction",powerDestruction);
+		PlayerPrefs.SetInt("powerBought",powerBought);
 		PlayerPrefs.SetInt("comboLife",comboLife);
 	}
 
@@ -63,6 +69,7 @@ public class StoreManager : MonoBehaviour
 				
 				currentGold -=  itensControls[0].price;
 				shields++;
+				shieldsBought++;
 			}
 		
 		}
@@ -74,6 +81,7 @@ public class StoreManager : MonoBehaviour
 				
 				currentGold -= itensControls[1].price;
 				powerDestruction++;
+				powerBought++;
 			}
 		}
 		if (item == "ExtraLife")
