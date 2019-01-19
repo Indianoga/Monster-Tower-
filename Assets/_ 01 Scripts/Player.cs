@@ -210,7 +210,7 @@ public class Player : MonoBehaviour
 	{
 		
 		playerLife--;
-		
+		creatEnemy.playerComboLifeSteal = 0;
 		if(playerLife == 3)
 		{
 			playerLifeManagerControls[3].playerImageOn.SetActive(false);

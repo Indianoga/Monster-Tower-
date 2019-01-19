@@ -148,7 +148,7 @@ public class CreatEnemy : MonoBehaviour
 						repositionEnemy();
 						RandomGold();
 						PlayerLifeSteal();
-						
+			
 					}
 					else if (enemyList[0].GetComponent<EnemyDeath>().enemyLife <= 0)
 					{	
@@ -220,7 +220,7 @@ public class CreatEnemy : MonoBehaviour
 		gold.text = getGold.ToString(); 
 		//save enemy number:
 		PlayerPrefs.SetInt("enemyNumber",enemyCount);
-		Debug.Log(bestTime);
+		Debug.Log(playerComboLifeSteal);
 	}
 
 	void GameLevelManager()
@@ -263,41 +263,41 @@ public class CreatEnemy : MonoBehaviour
 	{
 		if(player.comboLifePlayer >= 1)
 		{
-				if(player.playerLife == 1 && player.extraLifePlayer == 1)
+				if(player.playerLife < 2 && player.extraLifePlayer == 1)
 				{
 					playerComboLifeSteal++;
 				}
-				else if(player.playerLife == 2 && player.extraLifePlayer == 2)
+				if(player.playerLife < 3 && player.extraLifePlayer == 2)
 				{
 					playerComboLifeSteal++;
 				}
-				else if(player.playerLife == 3 && player.extraLifePlayer == 3)
+				if(player.playerLife < 4 && player.extraLifePlayer == 3)
 				{
 					playerComboLifeSteal++;
 				}
 			
-			if(playerComboLifeSteal >= 10)				
-			{
-				if(player.playerLife == 1 && player.extraLifePlayer == 1)
+				if(playerComboLifeSteal >= 5)				
 				{
-					player.playerLife = 2;
-					player.playerLifeManagerControls[1].playerImageOn.SetActive(true);
 					playerComboLifeSteal = 0;
-				}
-				else if(player.playerLife == 2 && player.extraLifePlayer == 2)
-				{
-					player.playerLife = 3;
-					player.playerLifeManagerControls[2].playerImageOn.SetActive(true);
-					playerComboLifeSteal = 0;
-				}
-				else if(player.playerLife == 3 && player.extraLifePlayer == 3)
-				{
-					player.playerLife = 4;
-					player.playerLifeManagerControls[3].playerImageOn.SetActive(true);
-					playerComboLifeSteal = 0;
-				}
-				
-			} 
+					if(player.playerLife == 1)
+					{
+						player.playerLife = 2;
+						player.playerLifeManagerControls[1].playerImageOn.SetActive(true);
+						
+					}
+					else if(player.playerLife == 2 )
+					{
+						player.playerLife = 3;
+						player.playerLifeManagerControls[2].playerImageOn.SetActive(true);
+						
+					}
+					else if(player.playerLife == 3 )
+					{
+						player.playerLife = 4;
+						player.playerLifeManagerControls[3].playerImageOn.SetActive(true);
+					}
+					
+				} 
 		}
 		
 	}
