@@ -21,7 +21,7 @@ public class CreatEnemy : MonoBehaviour
 	GameObject fireBall;
 
 	[SerializeField]
-	Transform[] spikeSpawners;
+	Animator[] spikesAnin;
 	[SerializeField]
 	GameObject spike;
 
@@ -225,7 +225,7 @@ public class CreatEnemy : MonoBehaviour
 
 	void GameLevelManager()
 	{
-		if(bestTime > 30f && level2 == false)
+		if(bestTime > 1f && level2 == false)
 		{
 
 			if (fireBallTime >= 1f)
@@ -349,8 +349,22 @@ public class CreatEnemy : MonoBehaviour
 	}
 	void SpikeInstantiate()
 	{
-		int index = Random.Range(0, spikeSpawners.Length);
-		GameObject newSpike = Instantiate(spike,spikeSpawners[index].position, spikeSpawners[index].rotation)as GameObject;
+		StartCoroutine("Spikes");
+	}
+
+	IEnumerator Spikes()
+	{
+		int index = Random.Range(0, 10);
+		if (index < 5)
+		{
+			spikesAnin[0].SetTrigger("doSpike");
+		}
+		else
+		{
+			spikesAnin[1].SetTrigger("doSpike");
+		}
+		
+		yield return new WaitForSeconds(0f);
 	}
 	void InstantiateEnemy()
 	{	
@@ -381,12 +395,13 @@ public class CreatEnemy : MonoBehaviour
 				if (shieldOff == true)
 				{
 					player.DamageControl();
-					
+
 				}
 				else 
 				{
 					shieldOff = true;
 					player.shieldsPlayer--;
+					player.newShield.SetActive(false);
 				}
 				
 			}

@@ -24,6 +24,10 @@ public class Player : MonoBehaviour
 	CreatEnemy creatEnemy;
 	float playerScale;
 
+	[SerializeField]
+	GameObject shieldPrefabs;
+	[HideInInspector]
+	public GameObject newShield;
 	[HideInInspector]
 	public int shieldsPlayer;
 	[HideInInspector]
@@ -32,6 +36,8 @@ public class Player : MonoBehaviour
 	public int extraLifePlayer;
 	[HideInInspector]
 	public int comboLifePlayer;
+
+
 
 	
 
@@ -155,6 +161,8 @@ public class Player : MonoBehaviour
 		if (shieldsPlayer > 0)
 		{
 			creatEnemy.shieldOff = false;
+		    newShield = Instantiate(shieldPrefabs,transform.position,transform.rotation) as GameObject;
+			newShield.transform.parent = transform;
 		}
 		else 
 		{
@@ -202,6 +210,7 @@ public class Player : MonoBehaviour
 			{
 				creatEnemy.shieldOff = true;
 				shieldsPlayer--;
+				newShield.SetActive(false);
 			}
 					
 		}

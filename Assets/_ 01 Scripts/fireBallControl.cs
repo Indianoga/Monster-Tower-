@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class fireBallControl : MonoBehaviour 
 {
-	public string id;
+	
 	// Use this for initialization
 	void Start () 
 	{
@@ -14,23 +14,14 @@ public class fireBallControl : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if(id == "spike")
-		{
-			StartCoroutine("SpikeTime");
-		}
-	
+		Movement ();
 	}
 	void Movement ()
 	{
-		if (transform.position.y >= -5f )
+		if (transform.position.y <= -5f )
 		{
 			Destroy(gameObject);
 		}
 	}
 
-	IEnumerator SpikeTime()
-	{
-		yield return new WaitForSecondsRealtime(0.5f);
-		Destroy(gameObject);
-	}
 }
