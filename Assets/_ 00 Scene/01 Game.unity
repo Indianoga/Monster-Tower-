@@ -3500,6 +3500,10 @@ MonoBehaviour:
   gameManager: {fileID: 1851665431}
   shieldPrefabs: {fileID: 1926642712980604, guid: e5c5ac25476210345a80bf45b39aa4fb,
     type: 2}
+  powerDestroyPrefabs: {fileID: 1719990733078718, guid: def2ac5a36083264bab480aa243cdd1a,
+    type: 2}
+  newShield: {fileID: 0}
+  newPower: {fileID: 0}
   shieldsPlayer: 0
   powerDestructionPlayer: 0
   extraLifePlayer: 0

@@ -208,6 +208,7 @@ public class CreatEnemy : MonoBehaviour
 				{
 					doDestruction = false;
 					player.powerDestructionPlayer--;
+					player.newPower.SetActive(false);
 				}
 			}
 			if(monsterTime > 30f)
@@ -355,6 +356,7 @@ public class CreatEnemy : MonoBehaviour
 	IEnumerator Spikes()
 	{
 		int index = Random.Range(0, 10);
+		yield return new WaitForSeconds(0.5f);
 		if (index < 5)
 		{
 			spikesAnin[0].SetTrigger("doSpike");
@@ -364,7 +366,7 @@ public class CreatEnemy : MonoBehaviour
 			spikesAnin[1].SetTrigger("doSpike");
 		}
 		
-		yield return new WaitForSeconds(0f);
+		
 	}
 	void InstantiateEnemy()
 	{	
