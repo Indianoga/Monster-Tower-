@@ -24,7 +24,7 @@ public class StoreManager : MonoBehaviour
 	{
 		
 		currentGold = PlayerPrefs.GetInt("gold");
-		//currentGold = 30000;
+		currentGold = 100;
 		shields = PlayerPrefs.GetInt("shields");
 		shieldsBought = PlayerPrefs.GetInt("shieldsBought");
 		extraLifes = PlayerPrefs.GetInt("extraLife");
@@ -33,7 +33,7 @@ public class StoreManager : MonoBehaviour
 		comboLife = PlayerPrefs.GetInt("comboLife");
 		//System Control :
 		//shields = 0;
-		//extraLifes = 0;
+		extraLifes = 0;
 		//powerDestruction = 0;
 		//comboLife = 0; 
 		
@@ -47,7 +47,7 @@ public class StoreManager : MonoBehaviour
 		ItensBtnsCheck();
 		Saves();
 		Debug.Log("Shields: " + shields + " PowerDestructions: " + powerDestruction + " ComboLifes: " + comboLife + " ExtraLifes: " + extraLifes);
-		
+	    Debug.Log("Extra Life price " + itensControls[2].price);
 	}
 	void Saves()
 	{
@@ -91,6 +91,15 @@ public class StoreManager : MonoBehaviour
 				
 				currentGold -= itensControls[2].price;
 				extraLifes++;
+				if(extraLifes == 1)
+				{
+					itensControls[2].price = 20000;
+				}
+				if(extraLifes == 2)
+				{
+					itensControls[2].price = 30000;
+				}
+				
 				
 			}
 		}

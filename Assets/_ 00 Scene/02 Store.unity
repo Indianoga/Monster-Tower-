@@ -881,9 +881,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Combo Life
-
-    Texto Explicando'
+  m_Text: "Combo Life\n\rRecover life \nby breaking 15 bones"
 --- !u!222 &654811947
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -994,7 +992,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Extra Life
 
-    Texto Explicando'
+    Earn an extra Life'
 --- !u!222 &762975001
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1308,9 +1306,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Power Destroy
-
-    texto explicando'
+  m_Text: "Power Destroy\nDestroy parts with a\n single punch"
 --- !u!222 &1024662197
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1506,9 +1502,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Shield
-
-    texto explicando'
+  m_Text: "Shield\nprotects from the\n first damage received"
 --- !u!222 &1290442867
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1547,7 +1541,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.03, y: -1.05}
+  m_AnchoredPosition: {x: 0.03, y: -0.82}
   m_SizeDelta: {x: 95.997, y: 17.999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1362346821
@@ -1872,19 +1866,19 @@ MonoBehaviour:
   gold: {fileID: 1362346821}
   itensControls:
   - itenName: Shield
-    price: 1
+    price: 500
     itenPrefab: {fileID: 0}
     itenBtns: {fileID: 476487090}
   - itenName: Power Destroy
-    price: 1
+    price: 2000
     itenPrefab: {fileID: 0}
     itenBtns: {fileID: 94992948}
   - itenName: Extra Life
-    price: 10
+    price: 10000
     itenPrefab: {fileID: 0}
     itenBtns: {fileID: 2062048585}
   - itenName: Combo Life
-    price: 5
+    price: 50000
     itenPrefab: {fileID: 0}
     itenBtns: {fileID: 1082938136}
 --- !u!1 &2062048583

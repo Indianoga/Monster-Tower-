@@ -12,6 +12,8 @@ public class CreatEnemy : MonoBehaviour
 	public Text  gold;
 	[SerializeField]
 	GameObject playerManager;
+	[SerializeField]
+	int lifeStealGoal;
 	Player player;
 	[SerializeField]
 	EnemyLifePrefabControl [] enemyLifePrefabControl;
@@ -40,6 +42,7 @@ public class CreatEnemy : MonoBehaviour
 	float spikeTime;
 	float powerDestructionTime;
 	int enemyCount;
+	int levelUpdate;
 	[HideInInspector]
 	public bool shieldOff;
 	[HideInInspector]
@@ -55,6 +58,7 @@ public class CreatEnemy : MonoBehaviour
 	public int getGold;
 	[HideInInspector]
 	public int playerComboLifeSteal;
+	
 
 
 
@@ -142,7 +146,8 @@ public class CreatEnemy : MonoBehaviour
 					playerSide = true;
 					if (doDestruction)
 					{
-						enemyCount++;	
+						enemyCount++;
+						levelUpdate++;	
 						enemyList[0].GetComponent<EnemyDeath>().RightPunch();
 						enemyList.RemoveAt(0);
 						repositionEnemy();
@@ -152,7 +157,8 @@ public class CreatEnemy : MonoBehaviour
 					}
 					else if (enemyList[0].GetComponent<EnemyDeath>().enemyLife <= 0)
 					{	
-						enemyCount++;	
+						enemyCount++;
+						levelUpdate++;	
 						enemyList[0].GetComponent<EnemyDeath>().RightPunch();
 						enemyList.RemoveAt(0);
 						repositionEnemy();
@@ -173,6 +179,7 @@ public class CreatEnemy : MonoBehaviour
 					if(doDestruction)
 					{
 						enemyCount++;	
+						levelUpdate++;
 						enemyList[0].GetComponent<EnemyDeath>().LeftPunch();
 						enemyList.RemoveAt(0);
 						repositionEnemy();
@@ -183,6 +190,7 @@ public class CreatEnemy : MonoBehaviour
 					else if (enemyList[0].GetComponent<EnemyDeath>().enemyLife <= 0)
 					{
 						enemyCount++;	
+						levelUpdate++;
 						enemyList[0].GetComponent<EnemyDeath>().LeftPunch();
 						enemyList.RemoveAt(0);
 						repositionEnemy();
@@ -221,12 +229,12 @@ public class CreatEnemy : MonoBehaviour
 		gold.text = getGold.ToString(); 
 		//save enemy number:
 		PlayerPrefs.SetInt("enemyNumber",enemyCount);
-		Debug.Log(playerComboLifeSteal);
+		Debug.Log("Osso" + levelUpdate);
 	}
 
 	void GameLevelManager()
 	{
-		if(bestTime > 1f && level2 == false)
+		if(levelUpdate > 30f && level2 == false)
 		{
 
 			if (fireBallTime >= 1f)
@@ -235,7 +243,7 @@ public class CreatEnemy : MonoBehaviour
 				fireBallTime = 0;
 			}
 		} 
-		if(bestTime > 60f)
+		if(levelUpdate > 120f)
 		{
 			level2 = true;
 			if(spikeTime > 1f)
@@ -245,7 +253,7 @@ public class CreatEnemy : MonoBehaviour
 			}
 			
 		} 
-		if (bestTime > 90)
+		if (levelUpdate > 240f)
 		{
 
 			if (fireBallTime >= 1f)
@@ -277,7 +285,7 @@ public class CreatEnemy : MonoBehaviour
 					playerComboLifeSteal++;
 				}
 			
-				if(playerComboLifeSteal >= 5)				
+				if(playerComboLifeSteal >= 15)				
 				{
 					playerComboLifeSteal = 0;
 					if(player.playerLife == 1)

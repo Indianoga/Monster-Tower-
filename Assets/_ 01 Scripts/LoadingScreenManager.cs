@@ -131,13 +131,13 @@ public class LoadingScreenManager : MonoBehaviour {
 
 	IEnumerator AnimaTexto(){
 		yield return new WaitForSeconds(1);
-		loadingText.text = "CARREGANDO";
+		loadingText.text = "Loading";
 		yield return new WaitForSeconds(1);
-		loadingText.text = "CARREGANDO.";
+		loadingText.text = "Loading.";
 		yield return new WaitForSeconds(1);
-		loadingText.text = "CARREGANDO..";
+		loadingText.text = "Loading..";
 		yield return new WaitForSeconds(1);
-		loadingText.text = "CARREGANDO...";
+		loadingText.text = "Loading...";
 		StartCoroutine("AnimaTexto");
 	}
 
