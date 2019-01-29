@@ -3137,20 +3137,17 @@ MonoBehaviour:
   playerManager: {fileID: 2047051809}
   lifeStealGoal: 15
   enemyLifePrefabControl:
-  - IdPrefab: 
+  - IdPrefab: bone
     enemyPrefab: {fileID: 1372971796385552, guid: 25dd08318471b3547962a39e5317484f,
       type: 2}
-  - IdPrefab: 
+  - IdPrefab: LeftBone
     enemyPrefab: {fileID: 1772138149000752, guid: c26d5f2dbd011834b8218ae12c121819,
       type: 2}
-  - IdPrefab: 
+  - IdPrefab: RightBone
     enemyPrefab: {fileID: 1372971796385552, guid: 953e28fa4b7d6114ab18e34037d06df0,
       type: 2}
-  - IdPrefab: 
+  - IdPrefab: ShieldBone
     enemyPrefab: {fileID: 1772138149000752, guid: d30505d2c124665408d40a02a9ab4031,
-      type: 2}
-  - IdPrefab: 
-    enemyPrefab: {fileID: 1772138149000752, guid: f64a4990c8f713046941c29c1dc3f1a3,
       type: 2}
   FireBallSpawner:
   - {fileID: 170230655}

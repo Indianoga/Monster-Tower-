@@ -229,7 +229,7 @@ public class CreatEnemy : MonoBehaviour
 		gold.text = getGold.ToString(); 
 		//save enemy number:
 		PlayerPrefs.SetInt("enemyNumber",enemyCount);
-		Debug.Log("Osso" + levelUpdate);
+		
 	}
 
 	void GameLevelManager()
