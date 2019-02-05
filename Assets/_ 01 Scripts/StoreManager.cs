@@ -8,6 +8,8 @@ public class StoreManager : MonoBehaviour
 
 	[SerializeField]
 	Text gold;
+	[SerializeField]
+	Text [] itensPrice;
 	int currentGold;
 	int shields;
 	int shieldsBought;
@@ -24,7 +26,7 @@ public class StoreManager : MonoBehaviour
 	{
 		
 		currentGold = PlayerPrefs.GetInt("gold");
-		currentGold = 100;
+		//currentGold = 0;
 		shields = PlayerPrefs.GetInt("shields");
 		shieldsBought = PlayerPrefs.GetInt("shieldsBought");
 		extraLifes = PlayerPrefs.GetInt("extraLife");
@@ -33,7 +35,7 @@ public class StoreManager : MonoBehaviour
 		comboLife = PlayerPrefs.GetInt("comboLife");
 		//System Control :
 		//shields = 0;
-		extraLifes = 0;
+		//extraLifes = 0;
 		//powerDestruction = 0;
 		//comboLife = 0; 
 		
@@ -46,8 +48,15 @@ public class StoreManager : MonoBehaviour
 		gold.text = currentGold.ToString();
 		ItensBtnsCheck();
 		Saves();
-		Debug.Log("Shields: " + shields + " PowerDestructions: " + powerDestruction + " ComboLifes: " + comboLife + " ExtraLifes: " + extraLifes);
-	    Debug.Log("Extra Life price " + itensControls[2].price);
+		ItensTextPriceCheck();
+		
+	}
+	void ItensTextPriceCheck()
+	{
+		itensPrice[0].text = string.Format("$ {0} ", itensControls[0].price);
+		itensPrice[1].text = string.Format("$ {0} ", itensControls[1].price);
+		itensPrice[2].text = string.Format("$ {0} ", itensControls[2].price);
+		itensPrice[3].text = string.Format("$ {0} ", itensControls[3].price);
 	}
 	void Saves()
 	{
@@ -70,6 +79,11 @@ public class StoreManager : MonoBehaviour
 				currentGold -=  itensControls[0].price;
 				shields++;
 				shieldsBought++;
+				if(shields == 1)
+				{
+					itensControls[0].price = 500;
+				}
+
 			}
 		
 		}
@@ -82,6 +96,10 @@ public class StoreManager : MonoBehaviour
 				currentGold -= itensControls[1].price;
 				powerDestruction++;
 				powerBought++;
+				if(powerDestruction == 1)
+				{
+					itensControls[1].price = 500;
+				}
 			}
 		}
 		if (item == "ExtraLife")

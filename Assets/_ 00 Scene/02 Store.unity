@@ -2171,17 +2171,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gold: {fileID: 1362346821}
+  itensPrice:
+  - {fileID: 387795464}
+  - {fileID: 1602144090}
+  - {fileID: 1651688983}
+  - {fileID: 748323449}
   itensControls:
   - itenName: Shield
-    price: 500
+    price: 20
     itenPrefab: {fileID: 0}
     itenBtns: {fileID: 476487090}
   - itenName: Power Destroy
-    price: 2000
+    price: 25
     itenPrefab: {fileID: 0}
     itenBtns: {fileID: 94992948}
   - itenName: Extra Life
-    price: 10000
+    price: 15
     itenPrefab: {fileID: 0}
     itenBtns: {fileID: 2062048585}
   - itenName: Combo Life
