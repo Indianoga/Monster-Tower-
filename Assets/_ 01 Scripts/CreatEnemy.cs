@@ -212,7 +212,7 @@ public class CreatEnemy : MonoBehaviour
 			GameLevelManager();
 			if (doDestruction)
 			{
-				if (powerDestructionTime >= 3f)
+				if (powerDestructionTime >= 6f)
 				{
 					doDestruction = false;
 					player.powerDestructionPlayer--;
@@ -285,7 +285,7 @@ public class CreatEnemy : MonoBehaviour
 					playerComboLifeSteal++;
 				}
 			
-				if(playerComboLifeSteal >= 15)				
+				if(playerComboLifeSteal >= 10)				
 				{
 					playerComboLifeSteal = 0;
 					if(player.playerLife == 1)

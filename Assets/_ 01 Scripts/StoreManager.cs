@@ -14,6 +14,7 @@ public class StoreManager : MonoBehaviour
 	int shields;
 	int shieldsBought;
 	int extraLifes;
+	int extraLifesBought;
 	int powerDestruction;
 	int powerBought;
 	int comboLife;
@@ -26,20 +27,26 @@ public class StoreManager : MonoBehaviour
 	{
 		
 		currentGold = PlayerPrefs.GetInt("gold");
-		//currentGold = 0;
+		//currentGold = 100;
 		shields = PlayerPrefs.GetInt("shields");
 		shieldsBought = PlayerPrefs.GetInt("shieldsBought");
 		extraLifes = PlayerPrefs.GetInt("extraLife");
+		extraLifesBought = PlayerPrefs.GetInt("extraLifeBought");
 		powerDestruction = PlayerPrefs.GetInt("powerDestruction");
 		powerBought = PlayerPrefs.GetInt("powerBought");
 		comboLife = PlayerPrefs.GetInt("comboLife");
 		//System Control :
 		//shields = 0;
+		//shieldsBought = 0;
 		//extraLifes = 0;
+		//extraLifesBought = 0;
 		//powerDestruction = 0;
+		//powerBought = 0;
 		//comboLife = 0; 
 		
+		
 	}
+
 	
 	// Update is called once per frame
 	void Update () 
@@ -47,11 +54,34 @@ public class StoreManager : MonoBehaviour
 		
 		gold.text = currentGold.ToString();
 		ItensBtnsCheck();
+		ItensPriceCheck();
+		ItensTextCheck();
 		Saves();
-		ItensTextPriceCheck();
+		
 		
 	}
-	void ItensTextPriceCheck()
+
+	void ItensPriceCheck()
+	{
+		if(shieldsBought >= 1)
+		{
+			itensControls[0].price = 500;
+		}
+		if(powerBought >= 1)
+		{
+			itensControls[1].price = 500;
+		}
+		if(extraLifesBought == 1)
+		{
+			itensControls[2].price = 15000;
+		}
+		if(extraLifesBought == 2)
+		{
+			itensControls[2].price = 30000;
+		}
+		
+	}
+	void ItensTextCheck()
 	{
 		itensPrice[0].text = string.Format("$ {0} ", itensControls[0].price);
 		itensPrice[1].text = string.Format("$ {0} ", itensControls[1].price);
@@ -64,6 +94,7 @@ public class StoreManager : MonoBehaviour
 		PlayerPrefs.SetInt("shields",shields);
 		PlayerPrefs.SetInt("shieldsBought",shieldsBought);
 		PlayerPrefs.SetInt("extraLife",extraLifes);
+		PlayerPrefs.SetInt("extraLifeBought", extraLifesBought);
 		PlayerPrefs.SetInt("powerDestruction",powerDestruction);
 		PlayerPrefs.SetInt("powerBought",powerBought);
 		PlayerPrefs.SetInt("comboLife",comboLife);
@@ -79,10 +110,7 @@ public class StoreManager : MonoBehaviour
 				currentGold -=  itensControls[0].price;
 				shields++;
 				shieldsBought++;
-				if(shields == 1)
-				{
-					itensControls[0].price = 500;
-				}
+				
 
 			}
 		
@@ -96,10 +124,7 @@ public class StoreManager : MonoBehaviour
 				currentGold -= itensControls[1].price;
 				powerDestruction++;
 				powerBought++;
-				if(powerDestruction == 1)
-				{
-					itensControls[1].price = 500;
-				}
+				
 			}
 		}
 		if (item == "ExtraLife")
@@ -109,16 +134,9 @@ public class StoreManager : MonoBehaviour
 				
 				currentGold -= itensControls[2].price;
 				extraLifes++;
-				if(extraLifes == 1)
-				{
-					itensControls[2].price = 20000;
-				}
-				if(extraLifes == 2)
-				{
-					itensControls[2].price = 30000;
-				}
+				extraLifesBought++;
 				
-				
+		
 			}
 		}
 
@@ -129,6 +147,7 @@ public class StoreManager : MonoBehaviour
 				
 				currentGold -= itensControls[3].price;
 				comboLife++;
+				
 			}
 		}
 	
