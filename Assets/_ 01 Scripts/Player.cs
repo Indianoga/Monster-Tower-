@@ -28,6 +28,8 @@ public class Player : MonoBehaviour
 	GameObject shieldPrefabs;
 	[SerializeField]
 	GameObject powerDestroyPrefabs;
+	[SerializeField]
+	GameObject dmgFeedback;
 	[HideInInspector]
 	public GameObject newShield;
 	[HideInInspector]
@@ -232,6 +234,7 @@ public class Player : MonoBehaviour
 		
 		playerLife--;
 		creatEnemy.playerComboLifeSteal = 0;
+		StartCoroutine(DamageFeedback());
 		if(playerLife == 3)
 		{
 			playerLifeManagerControls[3].playerImageOn.SetActive(false);
@@ -253,7 +256,13 @@ public class Player : MonoBehaviour
 			SoundManager.instance.Play("Player",SoundManager.instance.clipList.playerDeath1,0.5f);
 			creatEnemy.StartCoroutine("GameOver");
 		}
-		
+	}
+
+	IEnumerator DamageFeedback()
+	{
+		dmgFeedback.SetActive(true);
+		yield return new WaitForSeconds(0.5f);
+		dmgFeedback.SetActive(false);
 	}
 }
 

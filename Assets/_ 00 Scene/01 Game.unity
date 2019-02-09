@@ -204,6 +204,52 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1001 &44121969
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4396155343324654, guid: d7319fc997cc2e146864610915c041cc, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396155343324654, guid: d7319fc997cc2e146864610915c041cc, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396155343324654, guid: d7319fc997cc2e146864610915c041cc, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396155343324654, guid: d7319fc997cc2e146864610915c041cc, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396155343324654, guid: d7319fc997cc2e146864610915c041cc, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396155343324654, guid: d7319fc997cc2e146864610915c041cc, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396155343324654, guid: d7319fc997cc2e146864610915c041cc, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396155343324654, guid: d7319fc997cc2e146864610915c041cc, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1024775540796640, guid: d7319fc997cc2e146864610915c041cc, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d7319fc997cc2e146864610915c041cc, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &49518082
 GameObject:
   m_ObjectHideFlags: 0
@@ -2696,6 +2742,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &1345978721 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1024775540796640, guid: d7319fc997cc2e146864610915c041cc,
+    type: 2}
+  m_PrefabInternal: {fileID: 44121969}
 --- !u!1 &1382346745
 GameObject:
   m_ObjectHideFlags: 0
@@ -3461,6 +3512,7 @@ MonoBehaviour:
     type: 2}
   powerDestroyPrefabs: {fileID: 1719990733078718, guid: def2ac5a36083264bab480aa243cdd1a,
     type: 2}
+  dmgFeedback: {fileID: 1345978721}
   newShield: {fileID: 0}
   newPower: {fileID: 0}
   shieldsPlayer: 0
