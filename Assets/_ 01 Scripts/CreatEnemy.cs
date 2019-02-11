@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using UnityEngine.Advertisements;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -66,7 +67,7 @@ public class CreatEnemy : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		
+		Advertisement.Show();
 		enemyList = new List <GameObject>();
 		ads = GetComponent<AdsComponent>();
 		player = playerManager.GetComponent<Player>();

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - enemy
   - fireBall
+  - storeManager
   layers:
   - Default
   - TransparentFX

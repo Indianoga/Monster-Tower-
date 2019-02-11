@@ -1,16 +1,18 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class StoreManager : MonoBehaviour 
 {
-
+	
 	[SerializeField]
 	Text gold;
 	[SerializeField]
 	Text [] itensPrice;
-	int currentGold;
+	[HideInInspector]
+	public int currentGold;
 	int shields;
 	int shieldsBought;
 	int extraLifes;
@@ -21,6 +23,8 @@ public class StoreManager : MonoBehaviour
 
 	[SerializeField]
 	public ItensControls[] itensControls;
+	AdsComponent adsComponent;
+
 
 	// Use this for initialization
 	void Start () 
@@ -57,9 +61,10 @@ public class StoreManager : MonoBehaviour
 		ItensPriceCheck();
 		ItensTextCheck();
 		Saves();
-		
-		
+	
 	}
+
+	
 
 	void ItensPriceCheck()
 	{
