@@ -244,8 +244,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: C:/Users/Ind/Documents/GitHub/Monster-Tower-/monsterKey.keystore
+  AndroidKeyaliasName: monsterkey
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   AndroidEnableTango: 0

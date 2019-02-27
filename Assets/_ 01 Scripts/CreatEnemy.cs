@@ -222,7 +222,7 @@ public class CreatEnemy : MonoBehaviour
 			}
 			if(monsterTime > 30f)
 			{
-				SoundManager.instance.Play("Player",SoundManager.instance.clipList.monsterScream,1f);
+				SoundManager.instance.Play("Player",SoundManager.instance.clipList.monsterScreamSound,1f);
 				monsterTime = 0;
 			}
 			
